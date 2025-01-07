@@ -1,0 +1,43 @@
+.menu {
+  text-align: center;
+  width: 100%;
+
+  .list {
+    list-style: none;
+    padding: 0;
+    margin: 1rem 0;
+
+    li {
+      font-size: 1.5rem;
+      cursor: pointer;
+
+      &:hover {
+        color: var(--link-hover-color);
+      }
+    }
+  }
+
+  .toolbar {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .languages {
+      display: flex;
+      gap: 0.5rem;
+      padding: 0.5em;
+      .flag {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%; /* Torna as bandeiras circulares */
+        object-fit: cover; /* Mantém a proporção correta */
+        cursor: pointer;
+        transition: transform 0.2s ease-in-out;
+
+        &:hover {
+          transform: scale(1.1);
+        }
+      }
+    }
+  }
+}
