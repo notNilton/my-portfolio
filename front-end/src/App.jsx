@@ -1,14 +1,8 @@
 import React, { useState, useEffect } from "react";
 import "./styles/App.css";
 import Menu from "./components/Menu"; // Import do Menu
+import Projects from "./components/Projects";
 
-function Projects() {
-  return (
-    <div className="projects">
-      <p>SouComp Projects</p>
-    </div>
-  );
-}
 
 function App() {
   const [theme, setTheme] = useState("light");
