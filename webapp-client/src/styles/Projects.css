@@ -1,0 +1,73 @@
+.projects {
+    text-align: center;
+    width: 100%;
+    flex-grow: 1;
+    overflow: auto; /* Se a lista for grande, adiciona rolagem interna */
+    
+    h2 {
+        text-align: center;
+        margin-bottom: 20px;
+        font-size: 2rem;
+    }
+
+    .project-list {
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        align-items: center;
+    }
+
+    .project-card {
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        width: 100%;
+        max-width: 800px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: row;
+        overflow: hidden;
+    }
+
+    .project-image {
+        width: 50%;
+        height: auto;
+        aspect-ratio: 16 / 9;
+        object-fit: cover;
+    }
+
+    .project-info {
+        width: 50%;
+        /* padding: 20px; */
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+
+        .project-title {
+            margin: 0;
+            font-size: 1.5rem;
+        }
+
+        .project-description {
+            font-size: 1rem;
+            color: #555;
+            margin: 10px 0;
+        }
+
+        .project-tech {
+            list-style: none;
+            padding: 0;
+            margin: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+
+            li {
+                background-color: #eee;
+                /* padding: 4px 8px; */
+                border-radius: 4px;
+                font-size: 0.9rem;
+            }
+        }
+    }
+}
