@@ -2,6 +2,7 @@ import { useState, useEffect, FC } from "react";
 import "./styles/App.css";
 import Menu from "./components/Menu";
 import Projects from "./components/Projects";
+import React from "react";
 
 const App: FC = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
