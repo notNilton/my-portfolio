@@ -1,13 +1,18 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import './styles/Main.css';
-import App from './App';  // Remove .js extension
+import App from './App';
 
-const rootElement = document.getElementById('root') as HTMLElement;
-const root = createRoot(rootElement);
+const rootElement = document.getElementById('root');
 
-root.render(
-  <StrictMode>
-    <App />
-  </StrictMode>
-);
+if (rootElement) {
+  const root = createRoot(rootElement);
+
+  root.render(
+    <StrictMode>
+      <App />
+    </StrictMode>
+  );
+} else {
+  console.error('Elemento root não encontrado no DOM.');
+}
