@@ -1,40 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="Welcome to notNilton's Website - A showcase of creativity and innovation." />
-    <meta name="keywords" content="notNilton, portfolio, website, creativity, innovation" />
+    <meta name="description" content="Portfolio de notNilton." />
+    <meta name="keywords" content="notNilton, portfolio" />
     <meta name="author" content="notNilton" />
-    <meta property="og:title" content="notNilton's Website" />
-    <meta property="og:description" content="Welcome to notNilton's Website - A showcase of creativity and innovation." />
+    <meta property="og:title" content="Portfolio notNilton" />
+    <meta property="og:description" content="Portfolio de notNilton." />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://www.notnilton.com" />
     <meta property="og:image" content="/assets/og-image.jpg" />
-    <link rel="icon" type="image/svg+xml" href="/assets/vite.svg" />
+    <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg" />
     <link rel="alternate icon" type="image/png" href="/assets/favicon.png" />
     <link rel="apple-touch-icon" href="/assets/apple-touch-icon.png" />
     <link rel="manifest" href="/site.webmanifest" />
     <link rel="stylesheet" href="/src/styles.css" />
-    <title>notNilton's Website</title>
+    <title>notNilton</title>
   </head>
   <body>
     <noscript>
-      <strong>We're sorry but notNilton's Website doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>
+      <strong>JavaScript desativado. Ative-o.</strong>
     </noscript>
     <div id="root" role="main"></div>
     <script type="module" src="/src/Main.tsx" defer></script>
     <script>
-      // Service Worker registration for PWA
       if ('serviceWorker' in navigator) {
         window.addEventListener('load', () => {
           navigator.serviceWorker.register('/service-worker.js')
-            .then(registration => {
-              console.log('ServiceWorker registration successful with scope: ', registration.scope);
-            })
-            .catch(err => {
-              console.log('ServiceWorker registration failed: ', err);
-            });
+            .then(registration => console.log('ServiceWorker registrado:', registration.scope))
+            .catch(err => console.log('Erro no registro do ServiceWorker:', err));
         });
       }
     </script>
