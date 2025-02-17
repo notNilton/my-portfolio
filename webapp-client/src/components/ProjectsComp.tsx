@@ -1,11 +1,11 @@
 import { FC } from 'react';
 import { projectList } from '../data/ProjectsData';
-import '../styles/Projects.css';
+import '../styles/ProjectsStyle.css';
 
 const Projects: FC = () => {
   return (
     <section className="projects">
-      <h2>Projetos</h2>
+      <h2>Projects</h2>
       <div className="project-list">
         {projectList.map(project => (
           <div key={project.id} className="project-card">
