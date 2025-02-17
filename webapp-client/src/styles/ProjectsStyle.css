@@ -1,68 +1,88 @@
-/* Projects.css */
+/* ProjectsStyle.css */
 .projects {
     text-align: center;
     width: 100%;
     flex-grow: 1;
     overflow: auto;
     padding-block: 20px;
-    
+  
     h2 {
         text-align: center;
         font-size: 2rem;
         color: var(--text-color);
+        margin-bottom: 20px;
+        text-transform: uppercase;
     }
 
     .project-list {
         display: flex;
         flex-direction: column;
         gap: 20px;
+        width: 100%;
         align-items: center;
     }
 
     .project-card {
         border-bottom: 1px solid var(--text-color);
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        padding: 20px;
         display: flex;
-        flex-direction: row;
-        overflow: hidden;
+        flex-direction: column;
         transition: background-color 0.3s ease, border-color 0.3s ease;
     }
 
     .project-image {
-        width: 50%;
+        width: 100%;
         height: auto;
         aspect-ratio: 16 / 9;
         object-fit: cover;
+        margin-bottom: 15px;
     }
 
     .project-info {
-        width: 50%;
-        justify-content: center;
+        text-align: left;
         color: var(--text-color);
 
         .project-title {
-            margin: 0;
             font-size: 1.5rem;
-            color: var(--text-color);
+            font-weight: bold;
+            color: var(--link-active-color);
+            margin-bottom: 5px;
         }
 
-        .project-description {
+        .project-date {
             font-size: 1rem;
+            font-weight: bold;
+            color: var(--link-hover-color);
+            margin-bottom: 10px;
+        }
+
+        .project-short-description {
+            font-size: 1rem;
+            font-weight: bold;
             color: var(--text-color);
-            margin: 10px 0;
+            margin-bottom: 5px;
+        }
+
+        .project-long-description {
+            font-size: 0.95rem;
+            color: var(--text-color);
+            opacity: 0.9;
+            line-height: 1.5;
         }
 
         .project-tech {
             list-style: none;
-            display:flex;
-            justify-content: center;
-            padding:0;
+            display: flex;
+            gap: 10px;
+            padding: 0;
+            margin-top: 10px;
+
             li {
                 border-radius: 4px;
                 font-size: 0.9rem;
-                background-color: var(--button-bg-color);
-                color: var(--text-color);
-                /* padding: 5px 10px; */
+                background-color: var(--link-hover-color);
+                color: var(--button-bg-color);
+                padding: 5px 10px;
                 transition: background-color 0.3s ease, color 0.3s ease;
             }
         }
