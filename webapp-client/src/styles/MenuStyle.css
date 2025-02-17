@@ -2,6 +2,9 @@
 .menu {
   text-align: center;
   width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
 
   .list {
     list-style: none;
@@ -11,7 +14,7 @@
     li {
       font-size: 1.5rem;
       cursor: pointer;
-
+      
       &:hover {
         color: var(--link-hover-color);
       }
@@ -27,11 +30,12 @@
       display: flex;
       gap: 0.5rem;
       padding: 0.5em;
+
       .flag {
         width: 32px;
         height: 32px;
-        border-radius: 50%; /* Torna as bandeiras circulares */
-        object-fit: cover; /* Mantém a proporção correta */
+        border-radius: 50%;
+        object-fit: cover;
         cursor: pointer;
         transition: transform 0.2s ease-in-out;
 
@@ -40,5 +44,14 @@
         }
       }
     }
+  }
+
+  .version {
+    margin-top: auto;
+    font-size: 0.9rem;
+    color: var(--text-color);
+    opacity: 0.7;
+    text-align: center;
+    padding: 1rem 0;
   }
 }

@@ -36,6 +36,11 @@ const Menu: FC<MenuProps> = ({ theme, toggleTheme }) => {
           <img src={flagES} alt="Español" className="flag" />
         </div>
       </div>
+
+      {/* Version Section */}
+      <div className="version">
+        <p>Version 1.0.0</p>
+      </div>
     </div>
   );
 };
