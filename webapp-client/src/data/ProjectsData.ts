@@ -1,6 +1,5 @@
-import projectA from '../assets/projects/projectA.jpg';
-import projectB from '../assets/projects/projectB.webp';
-import projectC from '../assets/projects/projectC.webp';
+import radareImage from '../assets/projects/projectB.webp';
+import aiicpImage from '../assets/projects/projectB.webp';
 
 export interface Project {
   id: number;
@@ -13,23 +12,16 @@ export interface Project {
 export const projectList: Project[] = [
   {
     id: 1,
-    name: 'Projeto A',
-    image: projectA,
-    description: 'Breve descrição do Projeto A.',
-    technologies: ['React', 'TypeScript', 'CSS']
+    name: 'RADARE - Reconciliation and Data Analysis in a Responsive Environment',
+    image: radareImage,
+    description: 'Sistema Sistema de reconciliação de dados industriais, garantindo integridade e eficiência na análise de grandes volumes de dados.de reconciliação de dados industriais, garantindo integridade e eficiência na análise de grandes volumes de dados.',
+    technologies: ['Python', 'TypeScript', 'SQLite']
   },
   {
     id: 2,
-    name: 'Projeto B',
-    image: projectB,
-    description: 'Breve descrição do Projeto B.',
-    technologies: ['JavaScript', 'HTML', 'CSS']
-  },
-  {
-    id: 3,
-    name: 'Projeto C',
-    image: projectC,
-    description: 'Breve descrição do Projeto C.',
-    technologies: ['Node.js', 'Express', 'MongoDB']
+    name: 'AIICP - Artificial Intelligence Image Correction and Augmentation Pipeline',
+    image: aiicpImage,
+    description: 'Pipeline automatizado para correção e aprimoramento de imagens pixel-art geradas por Inteligência Artificial.Sistema de reconciliação de dados industriais, garantindo integridade e eficiência na análise de grandes volumes de dados.',
+    technologies: ['Python', 'Flask', 'OpenCV', 'PIL']
   }
 ];
