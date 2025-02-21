@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import flagUK from "../assets/flags/flag-uk.svg";
 import flagBR from "../assets/flags/flag-br.svg";
 import flagES from "../assets/flags/flag-es.svg";
-import "../styles/MenuStyle.css";
+import "../styles/NavbarStyle.css";
 
 interface MenuProps {
   theme: "light" | "dark";
@@ -12,7 +12,7 @@ interface MenuProps {
 
 const Menu: FC<MenuProps> = ({ theme, toggleTheme }) => {
   return (
-    <div className="menu">
+    <div className="navbar">
       <ul className="list">
         <li>
           <Link to="/projects">Projects</Link>

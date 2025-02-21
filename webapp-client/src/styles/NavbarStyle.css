@@ -1,20 +1,22 @@
-/* Menu.css */
-.menu {
+/* NavbarStyle.css */
+.navbar {
   text-align: center;
   width: 100%;
   display: flex;
-  flex-direction: column;
+  flex-direction: row; /* Altera para horizontal */
   justify-content: space-between;
+  align-items: center;
 
   .list {
     list-style: none;
     padding: 0;
-    margin: 1rem 0;
-
+    margin: 0;
+    display: flex; /* Alinha os itens horizontalmente */
+    
     li {
       font-size: 1.5rem;
       cursor: pointer;
-      
+      padding: 1rem;
       &:hover {
         color: var(--link-hover-color);
       }
@@ -25,8 +27,10 @@
     display: flex;
     justify-content: center;
     align-items: center;
+    /* gap: 1rem; */
 
     .languages {
+      /* padding: 1rem; */
       display: flex;
       gap: 0.5rem;
       padding: 0.5em;
@@ -47,11 +51,10 @@
   }
 
   .version {
-    margin-top: auto;
     font-size: 0.9rem;
     color: var(--text-color);
     opacity: 0.7;
     text-align: center;
-    padding: 1rem 0;
+    padding: 0 1rem;
   }
 }
