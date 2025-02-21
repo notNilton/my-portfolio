@@ -23,10 +23,11 @@ const App: FC = () => {
         <Menu theme={theme} toggleTheme={toggleTheme} />
         <main className="content">
           <Routes>
-            <Route path="/" element={<Navigate to="/projects" />} />
-            <Route path="/projects" element={<Projects />} />
+            <Route path="/" element={<Navigate to="/projetos" />} />
+            <Route path="/projetos" element={<Projects />} />
+            <Route path="/blog" element={<Curriculum />} />
             <Route path="/curriculum" element={<Curriculum />} />
-            <Route path="/about" element={<AboutComp />} />
+            <Route path="/sobre" element={<AboutComp />} />
           </Routes>
         </main>
       </div>
