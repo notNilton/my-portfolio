@@ -1,11 +1,10 @@
 import { useState, useEffect, FC } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import "./styles/AppStyle.css";
-import Menu from "./components/MenuComp";
+import Menu from "./components/NavbarComp";
 import Projects from "./components/ProjectsComp";
 import Curriculum from "./components/CurriculumComp";
 import AboutComp from "./components/AboutComp";
-import React from "react";
 
 const App: FC = () => {
   const [theme, setTheme] = useState<"light" | "dark">("light");
