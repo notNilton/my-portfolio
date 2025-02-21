@@ -5,7 +5,7 @@ import "../styles/CurriculumStyle.css";
 const Curriculum: FC = () => {
   return (
     <section className="curriculum">
-      <h2>My Curriculum</h2>
+      <h2>Meu Currículo</h2>
       <div className="curriculum-list">
         {curriculumData.map((phase) => (
           <div key={phase.id} className="curriculum-card">

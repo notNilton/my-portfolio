@@ -15,31 +15,29 @@ const Menu: FC<MenuProps> = ({ theme, toggleTheme }) => {
     <div className="navbar">
       <ul className="list">
         <li>
-          <Link to="/projects">Projects</Link>
+          <Link to="/projetos">Projetos</Link>
         </li>
         <li>
-          <Link to="/curriculum">Curriculum</Link>
+          <Link to="/blog">Blog</Link>
         </li>
         <li>
-          <Link to="/about">About</Link>
+          <Link to="/curriculum">Currículo</Link>
+        </li>
+        <li>
+          <Link to="/sobre">Sobre</Link>
         </li>
       </ul>
 
       <div className="toolbar">
         <button className="theme" onClick={toggleTheme}>
-          {theme === "light" ? "Light" : "Dark"} Theme
+          Tema {theme === "light" ? "Escuro" : "Claro"}
         </button>
 
-        <div className="languages">
-          <img src={flagUK} alt="English" className="flag" />
-          <img src={flagBR} alt="Portuguese" className="flag" />
-          <img src={flagES} alt="Español" className="flag" />
-        </div>
-      </div>
-
-      {/* Version Section */}
-      <div className="version">
-        <p>Version 1.0.0</p>
+        {/* <div className="languages">
+          <img src={flagUK} alt="Inglês" className="flag" />
+          <img src={flagBR} alt="Português" className="flag" />
+          <img src={flagES} alt="Espanhol" className="flag" />
+        </div> */}
       </div>
     </div>
   );

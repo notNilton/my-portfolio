@@ -41,7 +41,7 @@ h1 {
 }
 
 button {
-  border: 1px solid transparent;
+  border: 1px solid var(--text-color);
   padding: 0.5em;
   border-radius: 0.5em;
   font-size: 1em;
