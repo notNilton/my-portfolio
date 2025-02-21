@@ -1,11 +1,11 @@
+/* AppStyle.css */
 .App {
   display: grid;
-  grid-template-columns: 1fr 4fr;
+  grid-template-columns: 1fr;
   gap: 1rem;
-  height: 100vh;
-  padding: 1rem;
+  margin: 1rem;
   box-sizing: border-box;
-  overflow: hidden; /* Garante que nada ultrapasse a altura do elemento */
+  place-items: center;
 }
 
 .App > * {
@@ -16,14 +16,11 @@
   border: 1px solid var(--text-color);
   border-radius: 8px;
   background-color: var(--background-color);
-  transition: background-color 0.3s ease, color 0.3s ease;
-  overflow: auto; /* Adiciona rolagem interna nos filhos se necessário */
-  max-height: 100%; /* Garante que os filhos respeitem a altura do .App */
 }
 
-@media (max-width: 768px) {
-  .App {
-    grid-template-columns: 1fr;
-    height: auto;
-  }
+.App > .content {
+  width: 75%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }

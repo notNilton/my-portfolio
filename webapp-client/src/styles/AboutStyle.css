@@ -3,7 +3,7 @@
     text-align: center;
     width: 100%;
     flex-grow: 1;
-    overflow: auto;
+    /* overflow: auto; */
     padding-block: 20px;
   
     h2 {
