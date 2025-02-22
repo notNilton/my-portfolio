@@ -1,5 +1,5 @@
 import { FC } from "react";
-import { Link } from "react-router-dom";
+import { Link, useLocation } from "react-router-dom";
 import flagUK from "../assets/flags/flag-uk.svg";
 import flagBR from "../assets/flags/flag-br.svg";
 import flagES from "../assets/flags/flag-es.svg";
@@ -11,20 +11,42 @@ interface MenuProps {
 }
 
 const Menu: FC<MenuProps> = ({ theme, toggleTheme }) => {
+  const location = useLocation();
+
   return (
     <div className="navbar">
       <ul className="list">
         <li>
-          <Link to="/projetos">Projetos</Link>
+          <Link
+            to="/projetos"
+            className={location.pathname === "/projetos" ? "active" : ""}
+          >
+            Projetos
+          </Link>
         </li>
         <li>
-          <Link to="/blog">Blog</Link>
+          <Link
+            to="/blog"
+            className={location.pathname === "/blog" ? "active" : ""}
+          >
+            Blog
+          </Link>
         </li>
         <li>
-          <Link to="/curriculum">Currículo</Link>
+          <Link
+            to="/curriculum"
+            className={location.pathname === "/curriculum" ? "active" : ""}
+          >
+            Currículo
+          </Link>
         </li>
         <li>
-          <Link to="/sobre">Sobre</Link>
+          <Link
+            to="/sobre"
+            className={location.pathname === "/sobre" ? "active" : ""}
+          >
+            Sobre
+          </Link>
         </li>
       </ul>
 
@@ -32,12 +54,6 @@ const Menu: FC<MenuProps> = ({ theme, toggleTheme }) => {
         <button className="theme" onClick={toggleTheme}>
           Tema {theme === "light" ? "Escuro" : "Claro"}
         </button>
-
-        {/* <div className="languages">
-          <img src={flagUK} alt="Inglês" className="flag" />
-          <img src={flagBR} alt="Português" className="flag" />
-          <img src={flagES} alt="Espanhol" className="flag" />
-        </div> */}
       </div>
     </div>
   );
