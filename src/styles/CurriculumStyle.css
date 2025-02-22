@@ -8,7 +8,7 @@
   h2 {
     text-align: center;
     font-size: 2rem;
-    color: var(--text-color);
+    color: var(--text);
     margin-bottom: 20px;
     text-transform: uppercase;
   }
@@ -22,7 +22,7 @@
   }
 
   .curriculum-card {
-    border-bottom: 1px solid var(--text-color);
+    border-bottom: 1px solid var(--text);
     padding: 20px;
     display: flex;
     flex-direction: column;
@@ -30,13 +30,13 @@
 
     &:hover {
       background-color: var(--hover-bg-color);
-      border-color: var(--link-hover-color);
+      border-color: var(--link-hover);
     }
   }
 
   .curriculum-info {
     text-align: left;
-    color: var(--text-color);
+    color: var(--text);
   }
 
   .curriculum-title {
@@ -49,20 +49,20 @@
   .curriculum-date {
     font-size: 1rem;
     font-weight: bold;
-    color: var(--link-hover-color);
+    color: var(--link-hover);
     margin-bottom: 10px;
   }
 
   .curriculum-short-description {
     font-size: 1rem;
     font-weight: bold;
-    color: var(--text-color);
+    color: var(--text);
     margin-bottom: 5px;
   }
 
   .curriculum-long-description {
     font-size: 0.95rem;
-    color: var(--text-color);
+    color: var(--text);
     opacity: 0.9;
     line-height: 1.5;
   }

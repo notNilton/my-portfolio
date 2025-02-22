@@ -8,7 +8,7 @@
     h2 {
         text-align: center;
         font-size: 2rem;
-        color: var(--text-color);
+        color: var(--text);
         margin-bottom: 20px;
         text-transform: uppercase;
     }
@@ -22,7 +22,7 @@
     }
 
     .project-card {
-        border-bottom: 1px solid var(--text-color);
+        border-bottom: 1px solid var(--text);
         padding: 20px;
         display: flex;
         flex-direction: column;
@@ -39,7 +39,7 @@
 
     .project-info {
         text-align: left;
-        color: var(--text-color);
+        color: var(--text);
 
         .project-title {
             font-size: 1.5rem;
@@ -51,20 +51,20 @@
         .project-date {
             font-size: 1rem;
             font-weight: bold;
-            color: var(--link-hover-color);
+            color: var(--link-hover);
             margin-bottom: 10px;
         }
 
         .project-short-description {
             font-size: 1rem;
             font-weight: bold;
-            color: var(--text-color);
+            color: var(--text);
             margin-bottom: 5px;
         }
 
         .project-long-description {
             font-size: 0.95rem;
-            color: var(--text-color);
+            color: var(--text);
             opacity: 0.9;
             line-height: 1.5;
         }
@@ -79,8 +79,8 @@
             li {
                 border-radius: 4px;
                 font-size: 0.9rem;
-                background-color: var(--link-hover-color);
-                color: var(--button-bg-color);
+                background-color: var(--link-hover);
+                color: var(--button-bg);
                 padding: 5px 10px;
                 transition: background-color 0.3s ease, color 0.3s ease;
             }

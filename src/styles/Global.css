@@ -1,26 +1,29 @@
 /* Main.css */
 :root {
-  --background-color: #242424;
-  --text-color: rgba(255, 255, 255, 0.87);
-  --link-color: #646cff;
-  --link-hover-color: #535bf2;
-  --button-bg-color: #1a1a1a;
-  --button-hover-border-color: #646cff;
+  --background: #242424;
+  --text: rgba(255, 255, 255, 0.87);
+  --link: #646cff;
+  --link-hover: #535bf2;
+  --active: #111ad0;
+  --button-bg: #1a1a1a;
+  --button-hover-border: #646cff;
+  
 }
 
 body.light {
-  --background-color: #ffffff;
-  --text-color: #213547;
-  --link-color: #4c6ef5;
-  --link-hover-color: #747bff;
-  --button-bg-color: #f9f9f9;
+  --background: #ffffff;
+  --text: #213547;
+  --link: #4c6ef5;
+  --link-hover: #747bff;
+  --active: #141dc8;
+  --button-bg: #f9f9f9;
 }
 
 body {
   margin: 0;
   font-family: "Roboto Mono", monospace;
-  background-color: var(--background-color);
-  color: var(--text-color);
+  background-color: var(--background);
+  color: var(--text);
   line-height: 1.5;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
@@ -32,7 +35,7 @@ a {
 }
 
 a:hover {
-  color: var(--link-hover-color);
+  color: var(--link-hover);
 }
 
 h1 {
@@ -41,20 +44,20 @@ h1 {
 }
 
 button {
-  border: 1px solid var(--text-color);
+  border: 1px solid var(--text);
   padding: 0.5em;
   border-radius: 0.5em;
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: var(--button-bg-color);
-  color: var(--text-color);
+  background-color: var(--button-bg);
+  color: var(--text);
   cursor: pointer;
   transition: border-color 0.25s, background-color 0.25s, color 0.25s;
 }
 
 button:hover {
-  border-color: var(--button-hover-border-color);
+  border-color: var(--button-hover-border);
 }
 
 button:focus,
