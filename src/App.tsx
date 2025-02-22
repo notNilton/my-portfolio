@@ -26,7 +26,7 @@ const App: FC = () => {
             <Route path="/" element={<Navigate to="/projetos" />} />
             <Route path="/projetos" element={<Projects />} />
             <Route path="/blog" element={<Curriculum />} />
-            <Route path="/curriculum" element={<Curriculum />} />
+            <Route path="/curriculo" element={<Curriculum />} />
             <Route path="/sobre" element={<AboutComp />} />
           </Routes>
         </main>

@@ -34,8 +34,8 @@ const Menu: FC<MenuProps> = ({ theme, toggleTheme }) => {
         </li>
         <li>
           <Link
-            to="/curriculum"
-            className={location.pathname === "/curriculum" ? "active" : ""}
+            to="/curriculo"
+            className={location.pathname === "/curriculo" ? "active" : ""}
           >
             Currículo
           </Link>
