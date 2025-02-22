@@ -1,19 +1,32 @@
 {
+  // "extends": "tsconfig.json",
   "compilerOptions": {
-    "module": "NodeNext",
-    "moduleResolution": "NodeNext",
-    "target": "ES2022",
-    "types": ["node"],
-    "strict": true,
-    "esModuleInterop": true,
-    "skipLibCheck": true,
-    "baseUrl": ".",
+    "module": "ESNext", // Ou "ESNext" se estiver usando módulos ES no navegador
+    "moduleResolution": "Node", // Ou "Node" se não estiver usando "NodeNext"
     "outDir": "./dist",
-    "rootDir": "./src"
+    "rootDir": "./src",
+    "jsx": "react-jsx", // Adicione esta linha para suporte a JSX no React 17+
+    "types": ["node"],
+    "typeRoots": [
+      "./node_modules/@types",
+      "../node_modules/@types"
+    ],
+    "target": "ES6", // Defina o target para ES6 ou superior
+    "lib": ["DOM", "DOM.Iterable", "ESNext"], // Adicione libs necessárias para o navegador
+    "strict": true, // Habilita todas as verificações de tipo estritas
+    "esModuleInterop": true, // Permite a interoperabilidade entre CommonJS e ES Modules
+    "skipLibCheck": true, // Ignora a verificação de tipos nas bibliotecas instaladas
+    "forceConsistentCasingInFileNames": true // Impede inconsistências no casing de nomes de arquivos
   },
-  "include": ["src"],
-  "references": [
-    { "path": "./webapp-client/tsconfig.json" },
-    { "path": "./back-end/tsconfig.json" }
+  "include": [
+    "src/**/*.ts",
+    "src/**/*.tsx", // Adicione esta linha para incluir arquivos TSX
+    "../types/**/*.d.ts"
+  ],
+  "exclude": [
+    "node_modules",
+    "dist",
+    "**/*.test.ts",
+    "**/*.spec.ts"
   ]
 }
