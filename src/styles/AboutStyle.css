@@ -2,10 +2,7 @@
 .about {
     text-align: center;
     width: 100%;
-    flex-grow: 1;
-    /* overflow: auto; */
-    padding-block: 20px;
-  
+
     h2 {
       font-size: 2rem;
       color: var(--text);
@@ -13,12 +10,9 @@
     }
   
     .about-description {
-      font-size: 1.2rem;
+      font-size: 1.2rem; 
       color: var(--text);
-      max-width: 800px;
-      margin: 0 auto;
-      padding: 10px;
-      line-height: 1.5;
+      margin: 20px;
     }
   }
   

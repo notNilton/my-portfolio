@@ -1,69 +1,69 @@
+/* CurriculumStyle.css */
 .curriculum {
   text-align: center;
   width: 100%;
-  flex-grow: 1;
-  overflow: auto;
-  padding-block: 20px;
 
-  h2 {
-    text-align: center;
-    font-size: 2rem;
-    color: var(--text);
-    margin-bottom: 20px;
-    text-transform: uppercase;
-  }
+  .curriculum-section {
+    margin-bottom: 30px;
 
-  .curriculum-list {
-    display: flex;
-    flex-direction: column;
-    gap: 20px;
-    width: 100%;
-    align-items: center;
-  }
-
-  .curriculum-card {
-    border-bottom: 1px solid var(--text);
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
-
-    &:hover {
-      background-color: var(--hover-bg-color);
-      border-color: var(--link-hover);
+    .curriculum-section-title {
+      font-size: 1.8rem;
+      font-weight: bold;
+      color: var(--link-active-color);
+      margin-bottom: 15px;
     }
-  }
 
-  .curriculum-info {
-    text-align: left;
-    color: var(--text);
-  }
+    .curriculum-list {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      width: 100%;
+      align-items: center;
 
-  .curriculum-title {
-    font-size: 1.5rem;
-    font-weight: bold;
-    color: var(--link-active-color);
-    margin-bottom: 5px;
-  }
+      .curriculum-card {
+        border-bottom: 1px solid var(--text);
+        width: 100%;
+        transition: background-color 0.3s ease, border-color 0.3s ease;
 
-  .curriculum-date {
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--link-hover);
-    margin-bottom: 10px;
-  }
+        &:hover {
+          background-color: var(--hover-bg-color);
+          border-color: var(--link-hover);
+        }
 
-  .curriculum-short-description {
-    font-size: 1rem;
-    font-weight: bold;
-    color: var(--text);
-    margin-bottom: 5px;
-  }
+        .curriculum-info {
+          text-align: left;
+          color: var(--text);
+          margin: 20px;
 
-  .curriculum-long-description {
-    font-size: 0.95rem;
-    color: var(--text);
-    opacity: 0.9;
-    line-height: 1.5;
+          .curriculum-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--link-active-color);
+            margin: 0px;
+          }
+
+          .curriculum-date {
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--link-hover);
+            margin: 10px;
+          }
+
+          .curriculum-short-description {
+            font-size: 1rem;
+            font-weight: bold;
+            color: var(--text);
+            margin: 5px;
+          }
+
+          .curriculum-long-description {
+            font-size: 0.95rem;
+            color: var(--text);
+            opacity: 0.9;
+            line-height: 1.5;
+          }
+        }
+      }
+    }
   }
 }
