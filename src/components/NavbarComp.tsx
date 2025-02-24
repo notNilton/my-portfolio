@@ -1,16 +1,13 @@
 import { FC } from "react";
 import { Link, useLocation } from "react-router-dom";
-import flagUK from "../assets/flags/flag-uk.svg";
-import flagBR from "../assets/flags/flag-br.svg";
-import flagES from "../assets/flags/flag-es.svg";
 import "../styles/NavbarStyle.css";
 
-interface MenuProps {
+interface NavbarProps {
   theme: "light" | "dark";
   toggleTheme: () => void;
 }
 
-const Menu: FC<MenuProps> = ({ theme, toggleTheme }) => {
+const Navbar: FC<NavbarProps> = ({ theme, toggleTheme }) => {
   const location = useLocation();
 
   return (
@@ -24,14 +21,14 @@ const Menu: FC<MenuProps> = ({ theme, toggleTheme }) => {
             Projetos
           </Link>
         </li>
-        <li>
+        {/* <li>
           <Link
             to="/blog"
             className={location.pathname === "/blog" ? "active" : ""}
           >
             Blog
           </Link>
-        </li>
+        </li> */}
         <li>
           <Link
             to="/curriculo"
@@ -59,4 +56,4 @@ const Menu: FC<MenuProps> = ({ theme, toggleTheme }) => {
   );
 };
 
-export default Menu;
+export default Navbar;

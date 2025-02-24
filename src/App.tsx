@@ -1,31 +1,39 @@
 import { useState, useEffect, FC } from "react";
 import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
 import "./styles/AppStyle.css";
-import Menu from "./components/NavbarComp";
+import Navbar from "./components/NavbarComp";
 import Projects from "./components/ProjectsComp";
 import Curriculum from "./components/CurriculumComp";
 import AboutComp from "./components/AboutComp";
 
 const App: FC = () => {
-  const [theme, setTheme] = useState<"light" | "dark">("light");
+  const [theme, setTheme] = useState<"light" | "dark">(() => {
+    const savedTheme = localStorage.getItem("theme");
+    return savedTheme === "dark" ? "dark" : "light";
+  });
 
   useEffect(() => {
     document.body.className = theme;
+    localStorage.setItem("theme", theme);
   }, [theme]);
 
   const toggleTheme = () => {
-    setTheme((prevTheme) => (prevTheme === "light" ? "dark" : "light"));
+    setTheme((prevTheme) => {
+      const newTheme = prevTheme === "light" ? "dark" : "light";
+      localStorage.setItem("theme", newTheme);
+      return newTheme;
+    });
   };
 
   return (
     <Router>
-      <div className="App">
-        <Menu theme={theme} toggleTheme={toggleTheme} />
+      <div className={`App ${theme}`}>
+        <Navbar theme={theme} toggleTheme={toggleTheme} />
         <main className="content">
           <Routes>
             <Route path="/" element={<Navigate to="/projetos" />} />
             <Route path="/projetos" element={<Projects />} />
-            <Route path="/blog" element={<Curriculum />} />
+            {/* <Route path="/blog" element={<Curriculum />} /> */}
             <Route path="/curriculo" element={<Curriculum />} />
             <Route path="/sobre" element={<AboutComp />} />
           </Routes>
