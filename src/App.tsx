@@ -32,10 +32,10 @@ const App: FC = () => {
         <main className="content">
           <Routes>
             <Route path="/" element={<Navigate to="/projetos" />} />
-            <Route path="/projetos" element={<Projects />} />
+            <Route path="/projects" element={<Projects />} />
             {/* <Route path="/blog" element={<Curriculum />} /> */}
-            <Route path="/curriculo" element={<Curriculum />} />
-            <Route path="/sobre" element={<AboutComp />} />
+            <Route path="/resume" element={<Curriculum />} />
+            <Route path="/about" element={<AboutComp />} />
           </Routes>
         </main>
       </div>

@@ -15,10 +15,10 @@ const Navbar: FC<NavbarProps> = ({ theme, toggleTheme }) => {
       <ul className="list">
         <li>
           <Link
-            to="/projetos"
-            className={location.pathname === "/projetos" ? "active" : ""}
+            to="/projects"
+            className={location.pathname === "/projects" ? "active" : ""}
           >
-            Projetos
+            Projects
           </Link>
         </li>
         {/* <li>
@@ -31,25 +31,25 @@ const Navbar: FC<NavbarProps> = ({ theme, toggleTheme }) => {
         </li> */}
         <li>
           <Link
-            to="/curriculo"
-            className={location.pathname === "/curriculo" ? "active" : ""}
+            to="/resume"
+            className={location.pathname === "/resume" ? "active" : ""}
           >
-            Currículo
+            Resume
           </Link>
         </li>
         <li>
           <Link
-            to="/sobre"
-            className={location.pathname === "/sobre" ? "active" : ""}
+            to="/about"
+            className={location.pathname === "/about" ? "active" : ""}
           >
-            Sobre
+            About
           </Link>
         </li>
       </ul>
 
       <div className="toolbar">
         <button className="theme" onClick={toggleTheme}>
-          Tema {theme === "light" ? "Escuro" : "Claro"}
+          {theme === "light" ? "Dark Theme" : "Light Theme"}
         </button>
       </div>
     </div>

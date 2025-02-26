@@ -15,10 +15,10 @@ const Curriculum: FC = () => {
         <div key={key} className="curriculum-section">
           <h3 className="curriculum-section-title">
             {key === "education"
-              ? "Educação"
+              ? "Education"
               : key === "projects"
-              ? "Projetos"
-              : "Experiência Profissional"}
+              ? "Projects"
+              : "Professional Experience"}
           </h3>
           <div className="curriculum-list">
             {phases.map((phase) => (

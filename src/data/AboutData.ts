@@ -4,7 +4,7 @@ export interface About {
 }
 
 export const aboutData: About = {
-  title: "Sobre Mim",
+  title: "About Me",
   description:
-    "Sou um desenvolvedor apaixonado por tecnologia e inovação, com experiência em desenvolvimento backend e criação de APIs eficientes. Sempre em busca de novos desafios para expandir meus conhecimentos e contribuir para projetos impactantes.",
+    "I am a developer passionate about technology and innovation, with experience in backend development and building efficient APIs. Always seeking new challenges to expand my knowledge and contribute to impactful projects. This website was developed using TypeScript, React, and pure CSS, without relying on external UI frameworks beyond React's default capabilities. The design and responsiveness were implemented manually to ensure full customization. The project is hosted on Firebase, utilizing its cloud hosting services for scalability and seamless deployment.",
 };
