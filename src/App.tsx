@@ -31,7 +31,7 @@ const App: FC = () => {
         <Navbar theme={theme} toggleTheme={toggleTheme} />
         <main className="content">
           <Routes>
-            <Route path="/" element={<Navigate to="/projetos" />} />
+            <Route path="/" element={<Navigate to="/projects" />} />
             <Route path="/projects" element={<Projects />} />
             {/* <Route path="/blog" element={<Curriculum />} /> */}
             <Route path="/resume" element={<Curriculum />} />
