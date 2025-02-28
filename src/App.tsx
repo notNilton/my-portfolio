@@ -1,5 +1,10 @@
 import { useState, useEffect, FC } from "react";
-import { BrowserRouter as Router, Routes, Route, Navigate } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
 import "./styles/AppStyle.css";
 import Navbar from "./components/NavbarComp";
 import Projects from "./components/ProjectsComp";
