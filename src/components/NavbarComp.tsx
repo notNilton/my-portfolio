@@ -33,7 +33,7 @@ const Navbar: FC<NavbarProps> = ({ theme, toggleTheme }) => {
   const renderNavLinks = () => {
     const links = [
       { path: "/projects", label: "Projects" },
-      { path: "/blog", label: "Blog" },
+      // { path: "/blog", label: "Blog" },
       { path: "/resume", label: "Resume" },
       { path: "/about", label: "About" },
     ];

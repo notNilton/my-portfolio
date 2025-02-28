@@ -9,7 +9,7 @@ const Projects: FC = () => {
       <div className="project-list">
         {projectList.map((project) => (
           <div key={project.id} className="project-card">
-            <ImageCarousel images={project.images} /> {/* Agora recebe um array diretamente */}
+            {/* <ImageCarousel images={project.images} />  */}
             <div className="project-info">
               <h3 className="project-title">{project.name}</h3>
               <p className="project-description">{project.description}</p>

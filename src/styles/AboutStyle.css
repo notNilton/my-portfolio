@@ -1,18 +1,4 @@
 /* AboutStyle.css */
 .about {
-    text-align: center;
-    width: 100%;
-
-    h2 {
-      font-size: 2rem;
-      color: var(--text);
-      text-transform: uppercase;
-    }
-  
-    .about-description {
-      font-size: 1.2rem; 
-      color: var(--text);
-      margin: 20px;
-    }
-  }
-  
+  text-align: center;
+}
