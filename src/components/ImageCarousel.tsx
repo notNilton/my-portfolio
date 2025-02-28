@@ -1,10 +1,14 @@
 import { useState } from "react";
 
 interface ImageCarouselProps {
-  images: string[];
+  images?: string[]; // Made optional to handle undefined cases
 }
 
 const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
+  if (!images || images.length === 0) {
+    return null; // Do not render if images array is null, undefined, or empty
+  }
+
   const [currentIndex, setCurrentIndex] = useState(0);
 
   const prevImage = () => {
@@ -21,7 +25,7 @@ const ImageCarousel: React.FC<ImageCarouselProps> = ({ images }) => {
 
   return (
     <div style={styles.carouselContainer}>
-      {/* Mostrar setas apenas se houver mais de uma imagem */}
+      {/* Show arrows only if there is more than one image */}
       {images.length > 1 && (
         <button onClick={prevImage} style={styles.arrowButton}>
           ◀
