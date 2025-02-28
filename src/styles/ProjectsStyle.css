@@ -1,89 +1,48 @@
 /* ProjectsStyle.css */
+
 .projects {
-    text-align: center;
+  text-align: center;
+  width: 100%;
+  flex-grow: 1;
+  padding-block: 20px;
+
+  .project-list {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
     width: 100%;
-    flex-grow: 1;
-    /* padding-block: 20px; */
-  
-    h2 {
-        text-align: center;
-        font-size: 2rem;
-        color: var(--text);
-        margin-bottom: 20px;
-        text-transform: uppercase;
-    }
-
-    .project-list {
-        display: flex;
-        flex-direction: column;
-        gap: 20px;
-        width: 100%;
-        align-items: center;
-    }
-
+    align-items: center;
     .project-card {
-        border-bottom: 1px solid var(--text);
-        padding: 20px;
-        display: flex;
-        flex-direction: column;
-        transition: background-color 0.3s ease, border-color 0.3s ease;
-    }
+      border-bottom: 1px solid var(--text);
+      padding-bottom: 20px;
+      display: flex;
+      flex-direction: column;
+      transition: background-color 0.3s ease, border-color 0.3s ease;
 
-    .project-image {
-        width: 100%;
-        height: auto;
-        aspect-ratio: 16 / 9;
-        object-fit: cover;
-        margin-bottom: 15px;
-    }
-
-    .project-info {
-        text-align: left;
+      .project-info {
+        text-align: center;
         color: var(--text);
+      }
 
-        .project-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--link-active-color);
-            margin-bottom: 5px;
+      .project-tech {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.25rem;
+        list-style: none;
+        padding-inline: 10px;
+        margin: 0;
+        align-items: center;
+        justify-content: center;
+        li {
+          background-color: var(--link-hover);
+          color: var(--background);
+          font-weight: bold;
+          padding: 0.5rem 1rem;
+          border-radius: 4px;
+          font-size: 0.875rem;
+          transition: background-color 0.3s ease, color 0.3s ease;
         }
-
-        .project-date {
-            font-size: 1rem;
-            font-weight: bold;
-            color: var(--link-hover);
-            margin-bottom: 10px;
-        }
-
-        .project-short-description {
-            font-size: 1rem;
-            font-weight: bold;
-            color: var(--text);
-            margin-bottom: 5px;
-        }
-
-        .project-long-description {
-            font-size: 0.95rem;
-            color: var(--text);
-            opacity: 0.9;
-            line-height: 1.5;
-        }
-
-        .project-tech {
-            list-style: none;
-            display: flex;
-            gap: 10px;
-            padding: 0;
-            margin-top: 10px;
-
-            li {
-                border-radius: 4px;
-                font-size: 0.9rem;
-                background-color: var(--link-hover);
-                color: var(--button-bg);
-                padding: 5px 10px;
-                transition: background-color 0.3s ease, color 0.3s ease;
-            }
-        }
+      }
     }
+  }
 }

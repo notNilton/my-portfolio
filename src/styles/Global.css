@@ -23,7 +23,7 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  font-family: "Roboto Mono", monospace;
+  font-family: "Roboto", monospace;
   background-color: var(--background);
   color: var(--text);
   line-height: 1.5;
@@ -41,16 +41,35 @@ a:hover {
 }
 
 h1 {
-  font-size: 3em;
-  line-height: 1.1;
+  font-size: 1.55rem;
+  color: var(--text);
+  text-transform: uppercase;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 h2 {
-  font-size: 2.5em;
+  font-size: 1.25rem;
+  color: var(--text);
+  text-transform: uppercase;
+  margin-block-start: 0px;
+  margin-block-end: 0px;
+  margin-inline-start: 0px;
+  margin-inline-end: 0px;
 }
 
 h3 {
-  font-size: 2em;
+  font-size: 1.55rem;
+  color: var(--text);
+  text-transform: uppercase;
+}
+
+p {
+  font-size: 1rem;
+  color: var(--text);
+  margin: 10px;
 }
 
 button {
