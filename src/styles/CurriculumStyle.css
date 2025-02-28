@@ -6,13 +6,6 @@
   .curriculum-section {
     margin-bottom: 30px;
 
-    .curriculum-section-title {
-      font-size: 1.8rem;
-      font-weight: bold;
-      color: var(--link-active-color);
-      margin-bottom: 15px;
-    }
-
     .curriculum-list {
       display: flex;
       flex-direction: column;
@@ -34,13 +27,6 @@
           text-align: left;
           color: var(--text);
           margin: 20px;
-
-          .curriculum-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--link-active-color);
-            margin: 0px;
-          }
 
           .curriculum-date {
             font-size: 1rem;
