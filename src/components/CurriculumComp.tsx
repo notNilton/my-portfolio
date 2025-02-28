@@ -13,18 +13,18 @@ const Curriculum: FC = () => {
     <section className="curriculum">
       {Object.entries(groupedData).map(([key, phases]) => (
         <div key={key} className="curriculum-section">
-          <h3 className="curriculum-section-title">
+          <h1 className="curriculum-section-title">
             {key === "education"
               ? "Education"
               : key === "projects"
               ? "Projects"
               : "Professional Experience"}
-          </h3>
+          </h1>
           <div className="curriculum-list">
             {phases.map((phase) => (
               <div key={phase.id} className="curriculum-card">
                 <div className="curriculum-info">
-                  <h3 className="curriculum-title">{phase.title}</h3>
+                  <h2 className="curriculum-title">{phase.title}</h2>
                   <p className="curriculum-date">{phase.date}</p>
                   <p className="curriculum-short-description">
                     {phase.shortDescription}
