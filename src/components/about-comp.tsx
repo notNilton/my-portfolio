@@ -1,6 +1,6 @@
 import { FC } from "react";
-import { aboutData } from "../data/AboutData";
-import "../styles/AboutStyle.css";
+import { aboutData } from "../data/about-data";
+import "../styles/about-style.css";
 
 const AboutComp: FC = () => {
   return (
