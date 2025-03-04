@@ -8,7 +8,7 @@
 
   .list {
     display: flex;
-    gap: var(--spacing-medium);
+    gap: var(--spacing-large);
     list-style: none;
     margin: var(--spacing-small);
     padding-inline-start: 0;

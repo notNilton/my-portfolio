@@ -33,7 +33,7 @@ body {
   padding: 0;
   width: 100%;
   height: 100%;
-  font-family: "Roboto", monospace;
+  font-family: "Roboto", sans-serif; /* Use Roboto and fall back to a generic sans-serif font */
   background-color: var(--background);
   color: var(--text);
   line-height: 1.5;
