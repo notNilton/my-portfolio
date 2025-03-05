@@ -1,6 +1,6 @@
 import { FC } from "react";
 import { projectList } from "../data/project-data";
-import ImageCarousel from "./image-carousel"; // Importando o componente do carrossel
+import ImageCarousel from "./image-carousel";
 import "../styles/project-style.css";
 
 const Projects: FC = () => {
@@ -9,10 +9,14 @@ const Projects: FC = () => {
       <div className="project-list">
         {projectList.map((project) => (
           <div key={project.id} className="project-card">
-            {/* <ImageCarousel images={project.images} />  */}
             <div className="project-info">
               <h2 className="project-title">{project.name}</h2>
-              <p className="project-description">{project.description}</p>
+              <ImageCarousel images={project.images} />
+              <div className="project-description">
+                {project.description.map((paragraph, index) => (
+                  <p key={index}>{paragraph}</p>
+                ))}
+              </div>
               <ul className="project-tech">
                 {project.technologies.map((tech, index) => (
                   <li key={index}>{tech}</li>
