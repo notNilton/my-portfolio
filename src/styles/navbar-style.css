@@ -11,7 +11,7 @@
     gap: var(--spacing-large);
     list-style: none;
     margin: var(--spacing-small);
-    padding-inline-start: 0;
+    padding: 0;
 
     li {
       a {
@@ -40,5 +40,7 @@
     color: var(--text);
     display: flex;
     align-items: center;
+    margin: var(--spacing-small);
+    padding: 0;
   }
 }
