@@ -32,13 +32,13 @@
         .type {
           font-weight: bold;
           text-transform: uppercase;
-          margin: var(--spacing-small);
+          margin: var(--spacing-large);
         }
 
         .date {
           font-weight: bold;
-          color: var(--link-hover);
-          margin: var(--spacing-small);
+          color: var(--primary-color);
+          margin: var(--spacing-large);
         }
       }
     }
