@@ -12,7 +12,8 @@ Built with **TypeScript** and **React** for a modular and scalable structure:
 
 Inspired by **minimalist Japanese web design**, this portfolio prioritizes:  
 - **Whitespace** for readability and flow.  
-- **Clean typography** for an intuitive user experience.  
+- **Clean typography** for an intuitive user experience.
+- **Inutilia Truncat** anything that isn't truly necessary needs to be removed.
 
 ## Features  
 
