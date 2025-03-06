@@ -34,7 +34,11 @@ const Navbar: FC<NavbarProps> = ({ theme, toggleTheme }) => {
 
       <div className="toolbar">
         <button onClick={toggleTheme} className="theme-button">
-          {theme === "light" ? <MdDarkMode size={24} /> : <MdLightMode size={24} />}
+          {theme === "light" ? (
+            <MdDarkMode size={24} />
+          ) : (
+            <MdLightMode size={24} />
+          )}
         </button>
       </div>
     </nav>

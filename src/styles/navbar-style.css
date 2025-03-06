@@ -22,7 +22,7 @@
         transition: color 0.2s ease-in-out;
 
         &.active {
-          color: var(--active);
+          color: var(--primary-color);
           font-weight: bold;
         }
 
@@ -42,5 +42,9 @@
     align-items: center;
     margin: var(--spacing-small);
     padding: 0;
+
+    &:hover {
+      color: var(--primary-color);
+    }
   }
 }
