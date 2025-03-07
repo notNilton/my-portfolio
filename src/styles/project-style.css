@@ -32,7 +32,7 @@
       .project-info {
         text-align: center;
         color: var(--text);
-        padding: var(--spacing-medium);
+        /* padding: var(--spacing-medium); */
       }
 
       .project-tech {

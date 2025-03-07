@@ -8,12 +8,12 @@
 
   > *:nth-child(odd) {
     border-left: 3px solid var(--primary-color);
-    padding-left: var(--spacing-medium);
+    /* padding-left: var(--spacing-medium); */
   }
 
   > *:nth-child(even) {
     border-right: 3px solid var(--primary-color);
-    padding-right: var(--spacing-medium);
+    /* padding-right: var(--spacing-medium); */
   }
 
   .resume-item {

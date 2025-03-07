@@ -10,8 +10,7 @@
 
     .influences {
       border-left: 3px solid var(--primary-color);
-      padding: var(--spacing-medium) var(--spacing-medium) var(--spacing-medium)
-        var(--spacing-medium);
+      padding: var(--spacing-medium);
 
       .list {
         display: grid;
@@ -36,8 +35,7 @@
       border-right: 3px solid var(--primary-color);
       display: grid;
       list-style: none;
-      padding: var(--spacing-medium) var(--spacing-medium) var(--spacing-medium)
-        0;
+      padding: var(--spacing-medium);
       margin: 0;
       text-align: left;
 
