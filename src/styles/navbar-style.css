@@ -21,13 +21,14 @@
         position: relative;
         transition: color 0.2s ease-in-out;
 
+        &:hover {
+          color: var(--primary-color);
+          width: 100%;
+        }
+
         &.active {
           color: var(--primary-color);
           font-weight: bold;
-        }
-
-        &:hover::after {
-          width: 100%;
         }
       }
     }
