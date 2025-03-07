@@ -10,7 +10,7 @@ const Projects: FC = () => {
         {projectList.map((project) => (
           <div key={project.id} className="project-card">
             <div className="project-info">
-              <h2 className="project-title">{project.name}</h2>
+              <h1 className="project-title">{project.name}</h1>
               <ImageCarousel images={project.images} />
               <div className="project-description">
                 {project.description.map((paragraph, index) => (

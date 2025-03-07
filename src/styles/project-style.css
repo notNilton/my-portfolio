@@ -2,7 +2,6 @@
 
 .projects {
   text-align: center;
-  width: 100%;
   flex-grow: 1;
 
   .project-list {
@@ -10,8 +9,19 @@
     flex-direction: column;
     width: 100%;
     align-items: center;
-    > *:not(:last-child) {
-      border-bottom: 1px solid var(--text);
+
+    > * {
+      margin: var(--spacing-medium);
+    }
+
+    > *:nth-child(odd) {
+      border-left: 3px solid var(--primary-color);
+      padding-left: var(--spacing-medium);
+    }
+
+    > *:nth-child(even) {
+      border-right: 3px solid var(--primary-color);
+      padding-right: var(--spacing-medium);
     }
 
     .project-card {
