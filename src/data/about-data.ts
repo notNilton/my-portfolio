@@ -1,7 +1,10 @@
+// about-data.ts
+
 export interface About {
   title: string;
   description: string;
   links: string[];
+  influences: string[];
 }
 
 export const aboutData: About = {
@@ -12,5 +15,17 @@ export const aboutData: About = {
     "https://github.com/notNilton",
     "https://www.linkedin.com/in/notnilton/",
     "https://leetcode.com/u/notNilton/",
+  ],
+  influences: [
+    "Our Moloch",
+    "1500 Archers on a 28.8: Network Programming in Age of Empires",
+    "Hammock Driven Development",
+    "Simple Made Easy",
+    "Surely You're Joking, Mr. Feynman!",
+    "Litany for Money: A Deeper Economy",
+    "I Will Fucking Dropkick You If You Use That Spreadsheet",
+    "I Will Fucking Piledrive You If You Mention AI Again",
+    "Simulacra and Simulation",
+    "Napoleon's Buttons",
   ],
 };

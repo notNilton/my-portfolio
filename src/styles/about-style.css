@@ -1,14 +1,68 @@
 .about {
   text-align: center;
-  width: 100%;
-  flex-grow: 1;
   margin: var(--spacing-medium);
+
+  .main-text {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    text-align: left;
+
+    .influences {
+      border-left: 3px solid var(--primary-color);
+      padding: var(--spacing-medium) var(--spacing-medium) var(--spacing-medium)
+        var(--spacing-medium);
+
+      .list {
+        display: grid;
+        list-style: none;
+        margin: 0;
+        text-align: left;
+        margin-block: 0;
+        margin-inline: 0;
+        padding-inline-start: 0;
+        unicode-bidi: isolate;
+      }
+
+      .title {
+        margin-block: 0 var(--spacing-medium);
+        margin-inline: 0;
+        padding-inline-start: 0;
+        text-align: center;
+      }
+    }
+
+    .description {
+      border-right: 3px solid var(--primary-color);
+      display: grid;
+      list-style: none;
+      padding: var(--spacing-medium) var(--spacing-medium) var(--spacing-medium)
+        0;
+      margin: 0;
+      text-align: left;
+
+      .title {
+        margin-block: 0 var(--spacing-medium);
+        margin-inline: 0;
+        padding-inline-start: 0;
+        text-align: center;
+      }
+
+      p {
+        margin: 0;
+      }
+    }
+  }
 
   .links {
     .title {
-      margin: var(--spacing-medium);
-      font-size: 1.2rem;
+      margin-block: 0 var(--spacing-medium);
+      margin-inline: 0;
+      padding-inline-start: 0;
+      text-align: center;
+      border-bottom: 3px solid var(--primary-color);
     }
+
     ul {
       list-style: none;
       display: flex;
