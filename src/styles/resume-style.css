@@ -1,16 +1,24 @@
 .resume {
   text-align: center;
-  width: 100%;
   flex-grow: 1;
 
-  > *:not(:last-child) {
-    border-bottom: 1px solid var(--text);
+  > * {
+    margin: var(--spacing-medium);
+  }
+
+  > *:nth-child(odd) {
+    border-left: 3px solid var(--primary-color);
+    padding-left: var(--spacing-medium);
+  }
+
+  > *:nth-child(even) {
+    border-right: 3px solid var(--primary-color);
+    padding-right: var(--spacing-medium);
   }
 
   .resume-item {
     display: flex;
     flex-direction: column;
-    width: 100%;
     align-items: center;
 
     .resume-header {
@@ -22,6 +30,7 @@
       .title {
         font-weight: bold;
         margin: var(--spacing-medium);
+        color: var(--primary-color);
       }
 
       .info {
@@ -32,13 +41,15 @@
         .type {
           font-weight: bold;
           text-transform: uppercase;
-          margin: var(--spacing-large);
+          margin: var(--spacing-small);
+          border-bottom: 3px solid var(--primary-color);
         }
 
         .date {
           font-weight: bold;
           color: var(--primary-color);
-          margin: var(--spacing-large);
+          margin: var(--spacing-small);
+          border-bottom: 3px solid var(--text);
         }
       }
     }
@@ -47,12 +58,6 @@
       display: flex;
       flex-direction: column;
       transition: background-color 0.3s ease, border-color 0.3s ease;
-
-      .summary {
-        font-weight: bold;
-        color: var(--text);
-        margin: var(--spacing-small);
-      }
 
       .description {
         margin: var(--spacing-medium);

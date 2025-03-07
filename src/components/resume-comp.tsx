@@ -12,7 +12,7 @@ const Resume: FC = () => {
         <div key={item.id} className="resume-item">
           {/* Div com o título e o tipo */}
           <div className="resume-header">
-            <h2 className="title">{item.title}</h2>
+            <h1 className="title">{item.title}</h1>
             <div className="info">
               <span className={"type"}>
                 {item.type === "education" ? "Education" : "Work"}
@@ -21,9 +21,7 @@ const Resume: FC = () => {
             </div>
           </div>
 
-          {/* Detalhes do item */}
           <div className="resume-details">
-            <p className="summary">{item.shortDescription}</p>
             <p className="description">{item.longDescription}</p>
           </div>
         </div>
