@@ -2,7 +2,6 @@
 :root {
   --background: #2f2f2f;
   --text: rgba(255, 255, 255, 0.87);
-  --link: #646cff;
   --primary-color: #5d85ce;
   --button-bg: #1a1a1a;
   --button-hover-border: #646cff;
@@ -14,7 +13,6 @@
 body.light {
   --background: #ffffff;
   --text: #213547;
-  --link: #4c6ef5;
   --primary-color: #747bff;
   --button-bg: #f9f9f9;
 }
