@@ -2,58 +2,57 @@
 
 .projects {
   text-align: center;
-  flex-grow: 1;
+  margin: var(--spacing-medium);
 
-  .project-list {
+  > div {
+    margin: var(--spacing-medium) 0;
+    padding: var(--spacing-medium);
+    border-bottom: 3px solid var(--primary-color);
+
+    &:nth-child(odd) {
+      border-left: 3px solid var(--primary-color);
+    }
+
+    &:nth-child(even) {
+      border-right: 3px solid var(--primary-color);
+    }
+
+    .title {
+      margin: 0 0 var(--spacing-medium);
+      text-align: center;
+      color: var(--primary-color);
+    }
+  }
+
+  .project-card {
     display: flex;
     flex-direction: column;
-    width: 100%;
-    align-items: center;
+    transition: background-color 0.3s ease, border-color 0.3s ease;
 
-    > * {
-      margin: var(--spacing-medium);
+    .project-info {
+      text-align: center;
+      color: var(--text);
     }
 
-    > *:nth-child(odd) {
-      border-left: 3px solid var(--primary-color);
-      padding-left: var(--spacing-medium);
-    }
-
-    > *:nth-child(even) {
-      border-right: 3px solid var(--primary-color);
-      padding-right: var(--spacing-medium);
-    }
-
-    .project-card {
+    .project-tech {
+      padding-bottom: var(--spacing-medium);
       display: flex;
-      flex-direction: column;
-      transition: background-color 0.3s ease, border-color 0.3s ease;
+      flex-wrap: wrap;
+      gap: var(--spacing-medium);
+      list-style: none;
+      padding-inline: var(--spacing-small);
+      margin: 0;
+      align-items: center;
+      justify-content: center;
 
-      .project-info {
-        text-align: center;
-        color: var(--text);
-        /* padding: var(--spacing-medium); */
-      }
-
-      .project-tech {
-        display: flex;
-        flex-wrap: wrap;
-        gap: var(--spacing-medium);
-        list-style: none;
-        padding-inline: var(--spacing-small);
-        margin: 0;
-        align-items: center;
-        justify-content: center;
-
-        li {
-          background-color: var(--primary-color);
-          color: var(--background);
-          font-weight: bold;
-          padding: 0.5rem 1rem;
-          border-radius: var(--spacing-small);
-          font-size: 0.875rem;
-          transition: background-color 0.3s ease, color 0.3s ease;
-        }
+      li {
+        background-color: var(--primary-color);
+        color: var(--background);
+        font-weight: bold;
+        padding: 0.5rem 1rem;
+        border-radius: var(--spacing-small);
+        font-size: 0.875rem;
+        transition: background-color 0.3s ease, color 0.3s ease;
       }
     }
   }
