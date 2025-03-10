@@ -29,7 +29,7 @@ const Projects: FC = () => {
                   />
                 ))}
               </div>
-              <h1>Techonlogies</h1>
+              <h1>Techonlogies and Languages</h1>
               <ul className="project-tech">
                 {project.technologies.map((tech, index) => (
                   <li key={index}>{tech}</li>
