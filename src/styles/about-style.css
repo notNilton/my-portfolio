@@ -1,83 +1,96 @@
-.about {
+/* about-style.css */
+.about { 
   text-align: center;
   margin: var(--spacing-medium);
 
-  .main-text {
-    list-style: none;
-    padding: 0;
-    margin: 0;
-    text-align: left;
+  > div {
+    margin: var(--spacing-medium) 0;
+    padding: var(--spacing-medium);
+    border-bottom: 3px solid var(--primary-color);
 
-    .influences {
+    &:nth-child(odd) {
       border-left: 3px solid var(--primary-color);
-      padding: var(--spacing-medium);
-
-      .list {
-        display: grid;
-        list-style: none;
-        margin: 0;
-        text-align: left;
-        margin-block: 0;
-        margin-inline: 0;
-        padding-inline-start: 0;
-        unicode-bidi: isolate;
-      }
-
-      .title {
-        margin-block: 0 var(--spacing-medium);
-        margin-inline: 0;
-        padding-inline-start: 0;
-        text-align: center;
-      }
+      padding-left: var(--spacing-medium);
     }
 
-    .description {
+    &:nth-child(even) {
       border-right: 3px solid var(--primary-color);
-      display: grid;
+      padding-right: var(--spacing-medium);
+    }
+
+    .title {
+      margin: 0 0 var(--spacing-medium);
+      text-align: center;
+      color: var(--primary-color);
+      font-size: 1.5rem;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+  }
+
+  .description {
+    text-align: left;
+    
+    .text {
+      line-height: 1.6;
+      text-align: justify;
+      color: var(--text);
+    }
+  }
+
+  .influences {
+    .list {
       list-style: none;
-      padding: var(--spacing-medium);
-      margin: 0;
+      padding: 0;
       text-align: left;
 
-      .title {
-        margin-block: 0 var(--spacing-medium);
-        margin-inline: 0;
-        padding-inline-start: 0;
-        text-align: center;
-      }
+      li {
+        margin: var(--spacing-small) 0;
+        padding: 8px 15px;
+        border-radius: 5px;
+        
+        .influence-link {
+          color: var(--primary-color);
+          text-decoration: none;
+          transition: all 0.3s ease;
+          padding: 4px 8px;
+          border-radius: 3px;
+          font-weight: 500;
 
-      p {
-        margin: 0;
+          &:hover {
+            color: var(----primary-color);
+            text-decoration: underline;
+            text-underline-offset: 3px;
+            background: rgba(110, 195, 214, 0.05);
+          }
+        }
       }
     }
   }
 
-  .links {
-    .title {
-      margin-block: 0 var(--spacing-medium);
-      margin-inline: 0;
-      padding-inline-start: 0;
-      text-align: center;
-      border-bottom: 3px solid var(--primary-color);
-    }
-
-    ul {
-      list-style: none;
+  .profiles {
+    .icons {
       display: flex;
       justify-content: center;
       gap: var(--spacing-large);
+      list-style: none;
       padding: 0;
       margin: 0;
 
       li {
-        display: flex;
-
         a {
           font-size: 2rem;
-          color: inherit;
+          color: var(--text);
+          transition: all 0.3s ease;
+          padding: 8px;
 
           &:hover {
-            color: var(--primary-color);
+            color: var(----primary-color);
+            
+          }
+
+          > svg {
+            vertical-align: middle;
           }
         }
       }
