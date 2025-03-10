@@ -22,7 +22,7 @@ const Resume: FC = () => {
           </div>
 
           <div className="resume-details">
-            <p className="description">{item.longDescription}</p>
+            <p className="description">{item.description}</p>
           </div>
         </div>
       ))}

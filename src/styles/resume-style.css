@@ -1,19 +1,26 @@
 .resume {
   text-align: center;
-  flex-grow: 1;
+  margin: var(--spacing-medium);
 
-  > * {
-    margin: var(--spacing-medium);
-  }
+  > div {
+    margin: var(--spacing-medium) 0;
+    padding: var(--spacing-medium);
+    border-bottom: 3px solid var(--primary-color);
 
-  > *:nth-child(odd) {
-    border-left: 3px solid var(--primary-color);
-    /* padding-left: var(--spacing-medium); */
-  }
+    &:nth-child(odd) {
+      border-left: 3px solid var(--primary-color);
+    }
 
-  > *:nth-child(even) {
-    border-right: 3px solid var(--primary-color);
-    /* padding-right: var(--spacing-medium); */
+    &:nth-child(even) {
+      border-right: 3px solid var(--primary-color);
+    }
+
+    /* Títulos comuns */
+    .title {
+      margin: 0 0 var(--spacing-medium);
+      text-align: center;
+      color: var(--primary-color);
+    }
   }
 
   .resume-item {
