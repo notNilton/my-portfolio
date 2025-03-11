@@ -46,7 +46,7 @@
 
       li {
         margin: var(--spacing-small) 0;
-        padding: 8px 15px;
+        /* padding: 8px 15px; */
         border-radius: 5px;
 
         .post-link {
