@@ -9,7 +9,8 @@ import "./styles/app-style.css";
 import Navbar from "./components/navbar-comp";
 import Projects from "./components/project-comp";
 import Resume from "./components/resume-comp";
-import AboutComp from "./components/about-comp";
+import About from "./components/about-comp";
+import Blog from "./components/blog-comp";
 
 const App: FC = () => {
   const [theme, setTheme] = useState<"light" | "dark">(() => {
@@ -39,7 +40,8 @@ const App: FC = () => {
             <Route path="/" element={<Navigate to="/projects" />} />
             <Route path="/projects" element={<Projects />} />
             <Route path="/resume" element={<Resume />} />
-            <Route path="/about" element={<AboutComp />} />
+            <Route path="/blog" element={<Blog />} />
+            <Route path="/about" element={<About />} />
           </Routes>
         </main>
       </div>

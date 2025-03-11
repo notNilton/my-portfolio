@@ -4,7 +4,7 @@ import { aboutData } from "../data/about-data";
 import { FaGithub, FaLinkedin, FaCode } from "react-icons/fa";
 import "../styles/about-style.css";
 
-const AboutComp: FC = () => {
+const About: FC = () => {
   const iconMap: { [key: string]: JSX.Element } = {
     github: <FaGithub />,
     linkedin: <FaLinkedin />,
@@ -58,4 +58,4 @@ const AboutComp: FC = () => {
   );
 };
 
-export default AboutComp;
+export default About;
