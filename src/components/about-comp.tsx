@@ -29,7 +29,8 @@ const About: FC = () => {
                 rel="noopener noreferrer"
                 className="influence-link"
               >
-                {influence.title}
+                {" "}
+                - {influence.title}
               </a>
             </li>
           ))}
