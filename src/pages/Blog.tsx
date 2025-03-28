@@ -10,9 +10,9 @@ const Blog: FC = () => {
   const getSlugFromUrl = (url: string) => {
     try {
       const parsedUrl = new URL(url);
-      return parsedUrl.pathname.replace(/^\//, ''); // Remove a barra inicial
+      return parsedUrl.pathname.replace(/^\//, ""); // Remove a barra inicial
     } catch {
-      return url.replace(/^\//, ''); // Caso a URL já seja apenas o path
+      return url.replace(/^\//, ""); // Caso a URL já seja apenas o path
     }
   };
 
@@ -36,10 +36,10 @@ const Blog: FC = () => {
                   {post.title}
                 </div>
                 <span className="post-date">
-                  {new Date(post.date).toLocaleDateString('en-US', {
-                    year: 'numeric',
-                    month: 'short',
-                    day: 'numeric'
+                  {new Date(post.date).toLocaleDateString("en-US", {
+                    year: "numeric",
+                    month: "short",
+                    day: "numeric",
                   })}
                 </span>
               </div>
@@ -53,4 +53,3 @@ const Blog: FC = () => {
 };
 
 export default Blog;
-
