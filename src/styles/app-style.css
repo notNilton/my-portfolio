@@ -17,17 +17,20 @@
   border-radius: var(--spacing-small);
   background-color: var(--background);
   width: 100%;
+  box-sizing: border-box; /* Adicionado para todos os filhos */
 }
 
 .App > .content {
-  width: 50%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  width: 75%;
+  display: block; /* Alterado para block para melhor controle */
+  padding: var(--spacing-medium); /* Pode ser ajustado */
+  margin: 0; /* Reset se necessário */
+  box-sizing: border-box; /* Garante que padding não afete a width */
 }
 
 @media (max-width: 768px) {
   .App > .content {
     width: 100%;
+    padding: var(--spacing-small); /* Ajuste para mobile se necessário */
   }
 }

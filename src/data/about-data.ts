@@ -67,5 +67,9 @@ export const aboutData: About = {
       title: "This is what happens when you take Ayn Rand seriously",
       url: "https://www.pbs.org/newshour/economy/column-this-is-what-happens-when-you-take-ayn-rand-seriously",
     },
+    {
+      title: "Vulgar Display of Power",
+      url: "https://tante.cc/2025/03/28/vulgar-display-of-power/",
+    },
   ],
 };

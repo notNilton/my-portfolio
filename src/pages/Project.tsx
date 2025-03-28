@@ -2,7 +2,7 @@
 
 import { FC } from "react";
 import { projectList } from "../data/project-data";
-import ImageCarousel from "./image-carousel";
+import ImageCarousel from "../components/ImageCarousel";
 import "../styles/project-style.css";
 
 const Projects: FC = () => {
