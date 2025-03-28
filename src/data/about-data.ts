@@ -24,7 +24,7 @@ export const aboutData: About = {
       url: "https://www.nybooks.com/online/2012/12/15/our-moloch/",
     },
     {
-      title: "1500 Archers on a 28.8: Network Programming in Age of Empires",
+      title: "1500 Archers on a 28.8",
       url: "https://zoo.cs.yale.edu/classes/cs538/readings/papers/terrano_1500arch.pdf",
     },
     {
