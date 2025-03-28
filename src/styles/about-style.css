@@ -43,11 +43,14 @@
       list-style: none;
       padding: 0;
       text-align: left;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: var(--spacing-small);
 
       li {
         margin: var(--spacing-small) 0;
-        /* padding: 8px 15px; */
-        border-radius: 5px;
+        break-inside: avoid;
+        page-break-inside: avoid;
 
         .influence-link {
           color: var(--primary-color);
@@ -56,9 +59,10 @@
           padding: 4px 8px;
           border-radius: 3px;
           font-weight: 500;
+          display: inline-block;
 
           &:hover {
-            color: var(----primary-color);
+            color: var(--primary-color);
             text-decoration: underline;
             text-underline-offset: 3px;
             background: rgba(110, 195, 214, 0.05);
@@ -85,13 +89,30 @@
           padding: 8px;
 
           &:hover {
-            color: var(----primary-color);
+            color: var(--primary-color);
           }
 
           > svg {
             vertical-align: middle;
           }
         }
+      }
+    }
+  }
+
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .influences .list {
+      grid-template-columns: 1fr;
+    }
+
+    > div {
+      padding: var(--spacing-small);
+
+      &:nth-child(odd),
+      &:nth-child(even) {
+        padding-left: var(--spacing-small);
+        padding-right: var(--spacing-small);
       }
     }
   }

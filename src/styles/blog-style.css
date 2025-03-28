@@ -3,6 +3,7 @@
   text-align: center;
   margin: var(--spacing-medium);
   flex-grow: 1;
+
   > div {
     margin: var(--spacing-medium) 0;
     padding: var(--spacing-medium);
@@ -46,8 +47,16 @@
 
       li {
         margin: var(--spacing-small) 0;
-        /* padding: 8px 15px; */
         border-radius: 5px;
+        padding: 10px 0;
+
+        .post-header {
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+          gap: 10px;
+          flex-wrap: wrap;
+        }
 
         .post-link {
           color: var(--primary-color);
@@ -56,13 +65,24 @@
           padding: 4px 8px;
           border-radius: 3px;
           font-weight: 500;
+          cursor: pointer;
 
           &:hover {
             color: var(--primary-color);
             text-decoration: underline;
             text-underline-offset: 3px;
-            background: rgba(110, 195, 214, 0.05);
+            background: rgba(110, 195, 214, 0.1);
+            transform: scale(1.03);
           }
+        }
+
+        .post-date {
+          font-size: 0.85rem;
+          color: var(--text-light);
+          font-weight: 400;
+          padding: 2px 6px;
+          background: rgba(110, 195, 214, 0.1);
+          border-radius: 4px;
         }
 
         .post-description {

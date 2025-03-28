@@ -1,3 +1,4 @@
+/* resume-style.css */
 .resume {
   text-align: center;
   margin: var(--spacing-medium);
@@ -15,7 +16,6 @@
       border-right: 3px solid var(--primary-color);
     }
 
-    /* Títulos comuns */
     .title {
       margin: 0 0 var(--spacing-medium);
       text-align: center;
@@ -62,13 +62,45 @@
     }
 
     .resume-details {
-      display: flex;
-      flex-direction: column;
-      transition: background-color 0.3s ease, border-color 0.3s ease;
+      width: 100%;
+      margin-top: var(--spacing-medium);
 
-      .description {
-        margin: var(--spacing-medium);
+      .description-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        gap: var(--spacing-medium);
+        justify-content: center;
+
+        .description-column {
+          margin: 0;
+          padding: 0 var(--spacing-small);
+          list-style-type: none;
+
+          li {
+            margin-bottom: var(--spacing-small);
+            padding: var(--spacing-small);
+            border-radius: 4px;
+            text-align: left;
+            break-inside: avoid;
+            
+            &::before {
+              content: "→";
+              color: var(--primary-color);
+              margin-right: 0.5rem;
+            }
+            strong {
+              color: var(--primary-color);
+              font-weight: 600;
+            }
+          }
+        }
       }
     }
+  }
+}
+
+@media (max-width: 768px) {
+  .resume .resume-item .resume-details .description-grid {
+    grid-template-columns: 1fr;
   }
 }
