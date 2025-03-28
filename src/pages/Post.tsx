@@ -2,14 +2,14 @@
 import { FC } from "react";
 import { useParams } from "react-router-dom";
 import { blogData } from "../data/blog-data";
-import "../styles/post-style.css";   
+import "../styles/post-style.css";
 
 const Post: FC = () => {
   const { slug } = useParams<{ slug: string }>();
-  
+
   // Encontra o post correspondente ao slug na URL
-  const post = blogData.posts.find(post => 
-    post.url.replace(/^\//, '') === slug
+  const post = blogData.posts.find(
+    (post) => post.url.replace(/^\//, "") === slug
   );
 
   if (!post) {
@@ -28,16 +28,16 @@ const Post: FC = () => {
           <h1 className="post-title">{post.title}</h1>
           <div className="post-meta">
             <time dateTime={post.date} className="post-date">
-              {new Date(post.date).toLocaleDateString('pt-BR', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric'
+              {new Date(post.date).toLocaleDateString("pt-BR", {
+                year: "numeric",
+                month: "long",
+                day: "numeric",
               })}
             </time>
           </div>
         </header>
-        
-        <div 
+
+        <div
           className="post-body"
           dangerouslySetInnerHTML={{ __html: post.content }}
         />
