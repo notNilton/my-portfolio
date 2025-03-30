@@ -1,4 +1,4 @@
-/* ProjectsStyle.css */
+/* project-style.css */
 
 .projects {
   text-align: center;
@@ -16,34 +16,54 @@
     &:nth-child(even) {
       border-right: 3px solid var(--primary-color);
     }
-
-    .title {
-      margin: 0 0 var(--spacing-medium);
-      text-align: center;
-      color: var(--primary-color);
-    }
   }
 
   .project-card {
     display: flex;
     flex-direction: column;
-    transition: background-color 0.3s ease, border-color 0.3s ease;
 
     .project-info {
       text-align: center;
       color: var(--text);
     }
 
+    .project-title {
+      color: var(--primary-color);
+      margin-bottom: var(--spacing-medium);
+      font-size: 1.5rem;
+    }
+
+    .technologies-title {
+      color: var(--primary-color);
+      margin: var(--spacing-medium) 0 var(--spacing-small);
+      font-size: 1.2rem;
+    }
+
+    .project-description {
+      text-align: left;
+      line-height: 1.6;
+      margin-bottom: var(--spacing-medium);
+      
+      p {
+        margin-bottom: var(--spacing-small);
+      }
+    }
+
+    .bold-text {
+      color: var(--primary-color);
+      font-weight: 600;
+      padding: 0 2px;
+    }
+
     .project-tech {
-      padding-bottom: var(--spacing-medium);
       display: flex;
       flex-wrap: wrap;
-      gap: var(--spacing-medium);
-      list-style: none;
-      padding-inline: var(--spacing-small);
-      margin: 0;
-      align-items: center;
+      gap: var(--spacing-small);
       justify-content: center;
+      list-style: none;
+      padding: 0;
+      margin: 0 auto;
+      max-width: 100%;
 
       li {
         background-color: var(--primary-color);
@@ -52,8 +72,36 @@
         padding: 0.5rem 1rem;
         border-radius: var(--spacing-small);
         font-size: 0.875rem;
-        transition: background-color 0.3s ease, color 0.3s ease;
+        transition: all 0.3s ease;
+        white-space: nowrap;
+        margin-bottom: var(--spacing-small);
+        
+        &:hover {
+          background-color: var(--text);
+          transform: translateY(-2px);
+        }
       }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  .project-card {
+    padding: var(--spacing-small);
+  }
+  
+  .project-tech {
+    justify-content: flex-start;
+    overflow-x: auto;
+    padding-bottom: var(--spacing-small);
+    -webkit-overflow-scrolling: touch;
+    
+    &::-webkit-scrollbar {
+      height: 4px;
+    }
+    
+    li {
+      flex: 0 0 auto;
     }
   }
 }
