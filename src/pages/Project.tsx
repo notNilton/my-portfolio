@@ -4,14 +4,36 @@ import ImageCarousel from "../components/ImageCarousel";
 import "../styles/project-style.css";
 
 const Projects: FC = () => {
-  // Função para formatar texto com negrito usando React nodes
-  const renderWithBold = (text: string) => {
-    return text.split('**').map((segment, index) => 
-      index % 2 === 1 ? (
-        <strong key={index} className="bold-text">{segment}</strong>
-      ) : (
-        segment
-      )
+  // List of technologies to automatically bold
+  const TECHNOLOGIES = [
+    // Languages
+    'Python', 'TypeScript', 'JavaScript', 
+    // Frameworks/Libraries
+    'FastAPI', 'TensorFlow', 'OpenCV', 'PyTorch', 'Flask', 'React',
+    // Databases
+    'PostgreSQL', 'Redis', 
+    // Infrastructure
+    'Docker', 'Kubernetes', 
+    // AI/ML
+    'Deep Learning', 'NLP', 'Computer Vision',
+    // Other tech terms
+    'RESTful APIs', 'REST API', 'SCADA', 'ERP', 'IoT',
+    // Libraries
+    'PIL', 'NumPy', 'Dlib'
+  ];
+
+  // Function to boldify technologies in text
+  const boldifyTechnologies = (text: string) => {
+    // Create regex pattern that matches any technology (case insensitive)
+    const pattern = new RegExp(`(${TECHNOLOGIES.join('|')})`, 'gi');
+    
+    // Split text and wrap matches in strong tags
+    const parts = text.split(pattern);
+    
+    return parts.map((part, index) => 
+      TECHNOLOGIES.some(tech => tech.toLowerCase() === part.toLowerCase())
+        ? <strong key={index} className="bold-text">{part}</strong>
+        : part
     );
   };
 
@@ -25,14 +47,16 @@ const Projects: FC = () => {
             <div className="project-description">
               {project.description.map((paragraph, index) => (
                 <p key={index}>
-                  {renderWithBold(paragraph)}
+                  {boldifyTechnologies(paragraph)}
                 </p>
               ))}
             </div>
             <h2 className="technologies-title">Technologies</h2>
             <ul className="project-tech">
               {project.technologies.map((tech, index) => (
-                <li key={index}>{tech}</li>
+                <li key={index}>
+                  <strong>{tech}</strong>
+                </li>
               ))}
             </ul>
           </div>
