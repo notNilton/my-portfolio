@@ -1,55 +1,73 @@
-  import { useState, useEffect, FC } from "react";
-  import {
-    BrowserRouter as Router,
-    Routes,
-    Route,
-    Navigate,
-  } from "react-router-dom";
-  import "./styles/app-style.css";
-  import Navbar from "./components/Navbar";
-  import Projects from "./pages/Project";
-  import Resume from "./pages/Resume";
-  import About from "./pages/About";
-  import Blog from "./pages/Blog";
-  import Post from "./pages/Post"
+import { useState, useEffect, FC } from "react";
+import { 
+  BrowserRouter as Router,
+  Routes,
+  Route,
+  Navigate,
+} from "react-router-dom";
+import { 
+  Box,
+  ThemeProvider,
+  createTheme,
+  CssBaseline // ADICIONE ESTA IMPORTAÇÃO
+} from "@mui/material";
+import Navbar from "./components/Navbar";
+import Home from "./pages/Home";
+import getTheme from './theme';
 
-  const App: FC = () => {
-    const [theme, setTheme] = useState<"light" | "dark">(() => {
-      const savedTheme = localStorage.getItem("theme");
-      return savedTheme === "dark" ? "dark" : "light";
+const App: FC = () => {
+  const [mode, setMode] = useState<'light' | 'dark'>('light');
+  const theme = createTheme(getTheme(mode));
+
+  useEffect(() => {
+    const savedTheme = localStorage.getItem('theme') as 'light' | 'dark' | null;
+    if (savedTheme) {
+      setMode(savedTheme);
+    } else {
+      setMode('dark');
+      localStorage.setItem('theme', 'dark');
+    }
+  }, []);
+
+  const toggleTheme = () => {
+    setMode((prevMode) => {
+      const newMode = prevMode === 'light' ? 'dark' : 'light';
+      localStorage.setItem('theme', newMode);
+      return newMode;
     });
-
-    useEffect(() => {
-      document.body.className = theme;
-      localStorage.setItem("theme", theme);
-    }, [theme]);
-
-    const toggleTheme = () => {
-      setTheme((prevTheme) => {
-        const newTheme = prevTheme === "light" ? "dark" : "light";
-        localStorage.setItem("theme", newTheme);
-        return newTheme;
-      });
-    };
-
-    return (
-      <Router>
-        <div className={`App ${theme}`}>
-          <Navbar theme={theme} toggleTheme={toggleTheme} />
-          <main className="content">
-            <Routes>
-              <Route path="/" element={<Navigate to="/projects" />} />
-              <Route path="/projects" element={<Projects />} />
-              <Route path="/resume" element={<Resume />} />
-              <Route path="/blog" element={<Blog />} />
-              {/* <Route path="/blog" element={<Blog />} /> */}
-              <Route path="/blog/:slug" element={<Post />} />
-              <Route path="/about" element={<About />} />
-            </Routes>
-          </main>
-        </div>
-      </Router>
-    );
   };
 
-  export default App;
+  return (
+    <ThemeProvider theme={theme}>
+      <CssBaseline /> {/* ESTE COMPONENTE AGORA ESTÁ DEFINIDO */}
+      <Router>
+        <Box sx={{ 
+          minHeight: '100vh',
+          bgcolor: 'background.default',
+          color: 'text.primary',
+          display: 'flex',
+          flexDirection: 'column'
+        }}>
+          <Navbar theme={mode} toggleTheme={toggleTheme} />
+          <Box 
+            component="main"
+            sx={{
+              flex: 1,
+              p: 3,
+              maxWidth: 1200,
+              mx: 'auto',
+              width: '100%'
+            }}
+          >
+            <Routes>
+              {/* <Route path="/" element={<Navigate to="/" replace />} /> */}
+              <Route path="/" element={<Home />} />
+            </Routes>
+          </Box>
+        </Box>
+      </Router>
+    </ThemeProvider>
+  );
+};
+
+export default App;
