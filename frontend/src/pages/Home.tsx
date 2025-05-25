@@ -152,6 +152,15 @@ const Home: FC = () => {
           >
             View Projects
           </Button>
+          <Button
+            variant="outlined"
+            size="large"
+            startIcon={<Code />}
+            href="#influences"
+            sx={{ px: 4 }}
+          >
+            My Influences
+          </Button>
         </Stack>
 
         <Box
