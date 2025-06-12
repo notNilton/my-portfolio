@@ -138,11 +138,13 @@ const Home: FC = () => {
             variant="contained"
             size="large"
             startIcon={<Terminal />}
-            href="#contact"
+            component="a"
+            href="mailto:nilton.naab@gmail.com"
             sx={{ px: 4 }}
           >
             Contact Me
           </Button>
+
           <Button
             variant="outlined"
             size="large"
