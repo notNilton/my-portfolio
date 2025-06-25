@@ -1,19 +1,44 @@
-import { StrictMode } from 'react';
+import React, { StrictMode, useState, useEffect, FC } from 'react';
 import { createRoot } from 'react-dom/client';
-import { CssBaseline, ThemeProvider } from '@mui/material';
-import App from './App';
+import { ThemeProvider, CssBaseline } from '@mui/material';
 import getTheme from './theme';
+import App from './App';
+import './styles/index.css';
 
-const rootElement = document.getElementById('root');
+const Root: FC = () => {
+  const [mode, setMode] = useState<'light' | 'dark'>('light');
 
-if (rootElement) {
-  const root = createRoot(rootElement);
+  useEffect(() => {
+    const saved = localStorage.getItem('theme') as 'light' | 'dark' | null;
+    if (saved) {
+      setMode(saved);
+    } else {
+      setMode('dark');
+      localStorage.setItem('theme', 'dark');
+    }
+  }, []);
 
-  root.render(
-    <StrictMode>
-      <App />
-    </StrictMode>
+  const toggleTheme = () => {
+    setMode((prev) => {
+      const next = prev === 'light' ? 'dark' : 'light';
+      localStorage.setItem('theme', next);
+      return next;
+    });
+  };
+
+  return (
+    <ThemeProvider theme={getTheme(mode)}>
+      <CssBaseline />
+      <App theme={mode} toggleTheme={toggleTheme} />
+    </ThemeProvider>
   );
-} else {
-  console.error('Elemento root não encontrado no DOM.');
-}
+};
+
+const container = document.getElementById('root');
+if (!container) throw new Error('Elemento #root não encontrado');
+const root = createRoot(container);
+root.render(
+  <StrictMode>
+    <Root />
+  </StrictMode>
+);
