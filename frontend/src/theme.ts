@@ -1,95 +1,86 @@
+// src/theme.ts
 import { createTheme } from '@mui/material/styles';
 
-const getTheme = (mode: 'light' | 'dark') => createTheme({
-  palette: {
-    mode,
-    primary: {
-      main: '#5c6bc0', // Azul mais suave
-      light: '#7986cb',
-      dark: '#3949ab',
-    },
-    secondary: {
-      main: '#ff7043', // Laranja coral suave
-      light: '#ff8a65',
-      dark: '#e64a19',
-    },
-    background: {
-      default: mode === 'light' ? '#f8f5f2' : '#1a1a1a', // Beige claro / Cinza escuro
-      paper: mode === 'light' ? '#fffefc' : '#2a2a2a',   // Branco bege / Cinza médio
-    },
-    text: {
-      primary: mode === 'light' ? '#333333' : '#e0e0e0', // Texto mais suave
-      secondary: mode === 'light' ? '#555555' : '#b0b0b0',
-    },
-  },
-  shape: {
-    borderRadius: 8, // Bordas ligeiramente mais arredondadas
-  },
-  components: {
-    MuiAppBar: {
-      styleOverrides: {
-        root: {
-          backgroundImage: 'none',
-          backgroundColor: mode === 'light' ? 'rgba(248, 245, 242, 0.9)' : 'rgba(26, 26, 26, 0.9)',
-          backdropFilter: 'blur(8px)',
-          boxShadow: '0 2px 4px rgba(0,0,0,0.05)',
-        },
+const getTheme = (mode: 'light' | 'dark') =>
+  createTheme({
+    palette: {
+      mode,
+      primary: {
+        main: '#6B5B95',        // deeper mauve
+        light: '#8777A9',
+        dark: '#4F3E73',
+      },
+      secondary: {
+        main: '#FF6F61',        // warm coral
+        light: '#FF8A75',
+        dark: '#CC574F',
+      },
+      background: {
+        default: mode === 'light' ? '#F2E8DC' : '#1C1A19',
+        paper: mode === 'light' ? '#FFF8F2' : '#2A2827',
+      },
+      text: {
+        primary: mode === 'light' ? '#2E2B2A' : '#E3E0DF',
+        secondary: mode === 'light' ? '#4A4846' : '#B5B3B1',
       },
     },
-    MuiButton: {
-      styleOverrides: {
-        root: {
-          fontWeight: 500,
-          textTransform: 'none',
-          borderRadius: 8,
-          padding: '8px 16px',
-          transition: 'all 0.2s ease',
+    shape: {
+      borderRadius: 12,         // more organic rounding
+    },
+    typography: {
+      fontFamily: [
+        '"Playfair Display"',    // title font
+        '"Inter"',
+        'sans-serif',
+      ].join(','),
+      h1: {
+        fontFamily: '"Playfair Display"',
+        fontWeight: 800,
+        fontSize: '3rem',
+        letterSpacing: '-1px',
+      },
+      h2: {
+        fontFamily: '"Playfair Display"',
+        fontWeight: 700,
+        fontSize: '2.25rem',
+      },
+      body1: {
+        fontSize: '1rem',
+        lineHeight: 1.7,
+      },
+    },
+    components: {
+      MuiCssBaseline: {
+        styleOverrides: {
+          body: {
+            backgroundImage:
+              mode === 'light'
+                ? 'linear-gradient(135deg, #F2E8DC 0%, #FFF8F2 100%)'
+                : 'linear-gradient(135deg, #1C1A19 0%, #2A2827 100%)',
+            backgroundAttachment: 'fixed',
+          },
         },
-        contained: {
-          boxShadow: 'none',
-          '&:hover': {
-            boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+      },
+      MuiAppBar: {
+        styleOverrides: {
+          root: {
+            backdropFilter: 'blur(12px)',
+          },
+        },
+      },
+      MuiButton: {
+        styleOverrides: {
+          root: {
+            borderRadius: 12,
+            textTransform: 'none',
+            transition: 'transform 0.2s',
+            '&:hover': {
+              transform: 'scale(1.05)',
+            },
           },
         },
       },
     },
-    MuiPaper: {
-      styleOverrides: {
-        root: {
-          transition: 'all 0.3s ease',
-          boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
-        },
-      },
-    },
-  },
-  typography: {
-    fontFamily: [
-      '"Inter"',
-      '-apple-system',
-      'BlinkMacSystemFont',
-      '"Segoe UI"',
-      'Roboto',
-      '"Helvetica Neue"',
-      'Arial',
-      'sans-serif',
-      '"Apple Color Emoji"',
-      '"Segoe UI Emoji"',
-      '"Segoe UI Symbol"',
-    ].join(','),
-    h1: {
-      fontWeight: 700,
-      fontSize: '2.5rem',
-      letterSpacing: '-0.5px',
-    },
-    h2: {
-      fontWeight: 600,
-      fontSize: '2rem',
-      letterSpacing: '-0.25px',
-    },
-    body1: {
-      lineHeight: 1.6,
-    },
-  },
-});
+  });
 
 export default getTheme;

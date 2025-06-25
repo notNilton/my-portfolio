@@ -1,27 +1,27 @@
 {
   "compilerOptions": {
+    "target": "ES6",
     "module": "ESNext",
     "moduleResolution": "Node",
-    "outDir": "./dist",
-    "rootDir": "./src",
     "jsx": "react-jsx",
-    "types": ["node"],
-    "typeRoots": [
-      "./node_modules/@types",
-      "../node_modules/@types"
-    ],
-    "target": "ES6",
-    "lib": ["DOM", "DOM.Iterable", "ESNext"],
-    "strict": true,
+    "rootDir": "./src",
+    "outDir": "./dist",
+
+    // pick up Node & Vite globals
+    "types": ["node", "vite/client"],
+
+    // allow default imports from CommonJS
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+
+    "strict": true,
+    "lib": ["DOM", "DOM.Iterable", "ESNext"]
   },
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "../types/**/*.d.ts",
-    "src/firebase.js"
+    "src/**/*.d.ts"     // <-- picks up custom.d.ts and vite-env.d.ts
   ],
   "exclude": [
     "node_modules",
