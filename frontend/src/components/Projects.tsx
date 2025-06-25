@@ -34,28 +34,28 @@ export const Projects: FC<ProjectsProps> = ({ projects }) => {
     >
       {/* Section Title */}
       <Typography
-        variant="h4"
-        component="h2"
         id="projects"
+        variant="h1"
+        component="h1"
         sx={{
-          mb: 4,
-          fontWeight: 700,
+          fontWeight: 800,
+          fontSize: { xs: "2rem", md: "3rem" },
+          lineHeight: 1.1,
+          mb: 1,
           background: `linear-gradient(45deg, ${theme.palette.primary.main} 30%, ${theme.palette.secondary.main} 90%)`,
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
-          display: "inline-block",
-          textAlign: "center",
         }}
       >
-        My Main Projects
+        Main Projects
       </Typography>
 
       <Typography
         variant="body1"
-        sx={{ mb: 4, maxWidth: 800, lineHeight: 1.7, textAlign: "center" }}
+        sx={{ mb: 4, maxWidth: 1000, lineHeight: 1.7, textAlign: "center" }}
       >
-        These works have profoundly shaped my thinking across technology,
-        philosophy, and economics.
+        These are my main projects that showcase my skills and interests in
+        software development, design, and problem-solving.
       </Typography>
       {/* Grid of cards */}
       <Box

@@ -38,20 +38,20 @@ const Influences: FC<InfluencesProps> = ({ items = influences }) => {
       }}
     >
       <Typography
-        variant="h4"
-        component="h2"
         id="influences"
+        variant="h1"
+        component="h1"
         sx={{
-          mb: 4,
-          fontWeight: 700,
+          fontWeight: 800,
+          fontSize: { xs: "2rem", md: "3rem" },
+          lineHeight: 1.1,
+          mb: 1,
           background: `linear-gradient(45deg, ${theme.palette.primary.main} 30%, ${theme.palette.secondary.main} 90%)`,
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
-          display: "inline-block",
-          textAlign: "center",
         }}
       >
-        My Intellectual Influences
+        Intellectual Influences
       </Typography>
 
       <Typography
