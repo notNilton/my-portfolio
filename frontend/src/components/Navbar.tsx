@@ -25,8 +25,10 @@ const Navbar: FC<NavbarProps> = ({ theme, toggleTheme }) => {
 
   const navLinks = [
     { path: "/", label: "Home" },
+    { path: "/curriculum", label: "Curriculum" },
     // { path: "/blog", label: "Blog" },
   ];
+
 
   interface NavButtonProps extends ButtonProps {
     component?: React.ElementType;
@@ -60,7 +62,7 @@ const Navbar: FC<NavbarProps> = ({ theme, toggleTheme }) => {
       }}
     >
       <Toolbar sx={{ justifyContent: "space-between", px: 3 }}>
-        <Box component="nav" sx={{ display: "flex", gap: 0.5 }}>
+        <Box component="nav" sx={{ display: "flex", gap: 2 }}>
           {navLinks.map((link) => (
             <NavButton
               key={link.path}
