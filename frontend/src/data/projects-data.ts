@@ -1,24 +1,30 @@
-// myProjectsData.ts
-import radareImage1 from "../assets/projects/interface-completa.png";
-import aiicpImage1 from "../assets/projects/aiicp1.png";
+// projects-data.ts
+import radareImage1 from "../assets/projects/radare_1.png";
 
-export interface MyProject {
+import aiicpImage1 from "../assets/projects/aiicp_1.png";
+import aiicpImage2 from "../assets/projects/aiicp_2.png";
+import aiicpImage3 from "../assets/projects/aiicp_3.png";
+
+import lensegImage1 from "../assets/projects/lenseg_1.png";
+import lensegImage2 from "../assets/projects/lenseg_2.png";
+
+export interface ProjectData {
   id: number;
   title: string;
   description: string;
   detailedDescriptions?: string[];
   tags: string[];
-  imageUrl: string;
-  additionalImages?: string[];
+  images: string[];
   githubUrl?: string;
   liveUrl?: string;
   featured?: boolean;
 }
 
-export const myProjectsData: MyProject[] = [
+export const projectData: ProjectData[] = [
   {
     id: 1,
-    title: "RADARE – Reconciliation and Data Analysis in a Responsive Environment",
+    title:
+      "RADARE – Reconciliation and Data Analysis in a Responsive Environment",
     description:
       "Industrial data reconciliation system ensuring data integrity with scalable architecture.",
     detailedDescriptions: [
@@ -37,7 +43,7 @@ export const myProjectsData: MyProject[] = [
       "Docker",
       "Kubernetes",
     ],
-    imageUrl: radareImage1,
+    images: [radareImage1],
     featured: true,
   },
   {
@@ -51,8 +57,7 @@ export const myProjectsData: MyProject[] = [
       "Integrated advanced image processing with state-of-the-art deep learning models.",
     ],
     tags: ["Python", "TensorFlow", "OpenCV", "PyTorch", "FastAPI"],
-    imageUrl: aiicpImage1,
-    additionalImages: [aiicpImage1],
+    images: [aiicpImage1, aiicpImage2, aiicpImage3],
     githubUrl: "https://github.com/yourusername/aiicp",
     featured: true,
   },
@@ -67,14 +72,13 @@ export const myProjectsData: MyProject[] = [
       "Analyzes facial symmetry and geometry to recommend optimal frame fit.",
     ],
     tags: ["Python", "OpenCV", "TensorFlow", "Dlib", "Flask"],
-    imageUrl: "/images/default-project.jpg",
+    images: [lensegImage1, lensegImage2],
     liveUrl: "https://lensegmentation.example.com",
   },
 ];
 
-// Utilities
-export const getFeaturedProjects = (): MyProject[] =>
-  myProjectsData.filter((proj) => proj.featured);
+export const getFeaturedProjects = (): ProjectData[] =>
+  projectData.filter((proj) => proj.featured);
 
-export const getProjectById = (id: number): MyProject | undefined =>
-  myProjectsData.find((proj) => proj.id === id);
+export const getProjectById = (id: number): ProjectData | undefined =>
+  projectData.find((proj) => proj.id === id);

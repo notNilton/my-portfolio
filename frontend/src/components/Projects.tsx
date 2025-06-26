@@ -3,23 +3,19 @@ import React, { FC } from "react";
 import {
   Box,
   Typography,
-  CardMedia,
-  Stack,
   Button,
   Chip,
   Paper,
-  useMediaQuery,
 } from "@mui/material";
 import { alpha, useTheme } from "@mui/material/styles";
-import { MyProject } from "../data/projects-data";
+import { ProjectData } from "../data/projects-data";
 
 interface ProjectsProps {
-  projects: MyProject[];
+  projects: ProjectData[];
 }
 
 export const Projects: FC<ProjectsProps> = ({ projects }) => {
   const theme = useTheme();
-  const isMd = useMediaQuery(theme.breakpoints.up("md"));
 
   return (
     <Box
@@ -29,6 +25,12 @@ export const Projects: FC<ProjectsProps> = ({ projects }) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
+
+        /* constrain width and center horizontally */
+        width: "100%",
+        maxWidth: 1000,
+        mx: "auto",
+
         px: { xs: 2, md: 4 },
       }}
     >
@@ -39,9 +41,9 @@ export const Projects: FC<ProjectsProps> = ({ projects }) => {
         component="h1"
         sx={{
           fontWeight: 800,
-          fontSize: { xs: "2rem", md: "3rem" },
+          fontSize: { xs: "1.75rem", md: "2.5rem" },
           lineHeight: 1.1,
-          mb: 1,
+          mb: 2,
           background: `linear-gradient(45deg, ${theme.palette.primary.main} 30%, ${theme.palette.secondary.main} 90%)`,
           WebkitBackgroundClip: "text",
           WebkitTextFillColor: "transparent",
@@ -52,45 +54,69 @@ export const Projects: FC<ProjectsProps> = ({ projects }) => {
 
       <Typography
         variant="body1"
-        sx={{ mb: 4, maxWidth: 1000, lineHeight: 1.7, textAlign: "center" }}
+        sx={{ mb: 4, maxWidth: 800, lineHeight: 1.6, textAlign: "center" }}
       >
         These are my main projects that showcase my skills and interests in
         software development, design, and problem-solving.
       </Typography>
-      {/* Grid of cards */}
+
+      {/* Responsive grid */}
       <Box
         sx={{
           display: "grid",
-          gridTemplateColumns: isMd ? "repeat(2, 1fr)" : "1fr",
-          gap: 4,
+          width: "100%",
+          gridTemplateColumns: "repeat(auto-fit, minmax(280px, 1fr))",
+          gap: 5,
         }}
       >
         {projects.map((proj) => {
           const href = proj.liveUrl ?? proj.githubUrl ?? "#";
+          const firstImage = proj.images[0];
 
           return (
             <Paper
               key={proj.id}
               elevation={3}
               sx={{
-                borderRadius: 3,
+                borderRadius: 2,
                 overflow: "hidden",
                 display: "flex",
                 flexDirection: "column",
               }}
             >
-              <CardMedia
-                component="img"
-                height={isMd ? 200 : 180}
-                image={proj.imageUrl}
-                alt={`${proj.title} screenshot`}
-                sx={{ objectFit: "cover" }}
-              />
-
+              {/* First image only, 1:1 */}
               <Box
-                sx={{ p: 3, flex: 1, display: "flex", flexDirection: "column" }}
+                sx={{
+                  width: "100%",
+                  position: "relative",
+                  pt: "100%", // 1:1 ratio
+                }}
               >
-                <Typography variant="h5" sx={{ fontWeight: 600, mb: 1 }}>
+                <Box
+                  component="img"
+                  src={firstImage}
+                  alt={`${proj.title} screenshot`}
+                  sx={{
+                    position: "absolute",
+                    top: 0,
+                    left: 0,
+                    width: "100%",
+                    height: "100%",
+                    objectFit: "cover",
+                  }}
+                />
+              </Box>
+
+              {/* Project Info */}
+              <Box
+                sx={{
+                  p: 2,
+                  flex: 1,
+                  display: "flex",
+                  flexDirection: "column",
+                }}
+              >
+                <Typography variant="h6" sx={{ fontWeight: 600, mb: 1 }}>
                   {proj.title}
                 </Typography>
 
@@ -100,44 +126,40 @@ export const Projects: FC<ProjectsProps> = ({ projects }) => {
                     flex: 1,
                     mb: 2,
                     color: "text.secondary",
-                    lineHeight: 1.6,
+                    lineHeight: 1.5,
+                    fontSize: "0.9rem",
                   }}
                 >
                   {proj.description}
                 </Typography>
 
-                <Stack
-                  direction="row"
-                  flexWrap="wrap"
-                  spacing={1}
-                  sx={{ mb: 2 }}
-                >
+                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5, mb: 2 }}>
                   {proj.tags.map((tag) => (
                     <Chip
                       key={tag}
                       label={tag}
                       size="small"
                       sx={{
-                        backgroundColor: alpha(theme.palette.primary.main, 0.1),
+                        backgroundColor: alpha(theme.palette.primary.main, 0.15),
                         color: theme.palette.primary.main,
-                        fontSize: "0.75rem",
-                        py: 0.5,
-                        px: 1,
+                        fontSize: "0.7rem",
+                        py: 0.4,
+                        px: 0.8,
                       }}
                     />
                   ))}
-                </Stack>
+                </Box>
 
-                <Button
+                {/* <Button
                   variant="contained"
-                  size="medium"
+                  size="small"
                   href={href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  sx={{ mt: "auto", alignSelf: "flex-start" }}
+                  sx={{ mt: "auto", alignSelf: "center" }}
                 >
                   Know More
-                </Button>
+                </Button> */}
               </Box>
             </Paper>
           );
