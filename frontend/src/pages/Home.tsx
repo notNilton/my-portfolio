@@ -8,13 +8,14 @@ import Influences from "../components/Influences";
 import Footer from "../components/Footer";
 
 import { profileData } from "../data/profile-data";
-import { myProjectsData } from "../data/projects-data";
+import { projectData } from "../data/projects-data";
+
 
 const Home: FC = () => (
   <Box>
-    <Profile profile={profileData} />
+    <Profile profile={profileData} /> 
     <Divider sx={{ my: 4 }} />
-    <Projects projects={myProjectsData} />
+    <Projects projects={projectData} />
     <Divider sx={{ my: 4 }} />
     <Influences />
     <Divider sx={{ my: 4 }} />
