@@ -11,6 +11,7 @@
     "types": ["node", "vite/client"],
 
     // allow default imports from CommonJS
+    "resolveJsonModule": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
     "forceConsistentCasingInFileNames": true,
@@ -21,12 +22,7 @@
   "include": [
     "src/**/*.ts",
     "src/**/*.tsx",
-    "src/**/*.d.ts"     // <-- picks up custom.d.ts and vite-env.d.ts
+    "src/**/*.d.ts" // <-- picks up custom.d.ts and vite-env.d.ts
   ],
-  "exclude": [
-    "node_modules",
-    "dist",
-    "**/*.test.ts",
-    "**/*.spec.ts"
-  ]
+  "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"]
 }
