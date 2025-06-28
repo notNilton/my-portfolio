@@ -2,11 +2,9 @@
 import React, { FC } from "react";
 import { Box, Typography, Link, useTheme } from "@mui/material";
 import { Link as RouterLink } from "react-router-dom";
-// ← import package.json (TS will pick up version)
 import pkg from "../../package.json";
 
 const currentYear = new Date().getFullYear();
-// ← destructure the version field
 const { version } = pkg;
 
 const Footer: FC = () => {
