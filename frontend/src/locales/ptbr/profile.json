@@ -1,0 +1,30 @@
+{
+    "name": "Nilton Santos",
+    "title": "Designer de Soluções & Desenvolvedor Full Stack",
+    "description": "Com mais de 7 anos de experiência em engenharia de software, aperfeiçoei minhas habilidades em arquitetar aplicações web escaláveis e interfaces de usuário intuitivas. Minha paixão está em unir design e desenvolvimento, garantindo que cada produto que construo seja bonito e performático. Fora do código, sou um colaborador ativo de projetos open-source e mentor, participando de várias iniciativas comunitárias. Também gosto de fazer trilhas, fotografar e explorar as últimas tendências em IA e aprendizado de máquina para me manter atualizado.",
+    "skills": [
+        "React 18",
+        "TypeScript 5",
+        "Material-UI v5",
+        "TanStack Query",
+        "Zustand",
+        "Framer Motion",
+        "Node.js",
+        "Express.js",
+        "NestJS",
+        "FastAPI",
+        "Python",
+        "PostgreSQL 16",
+        "SQLite",
+        "Docker",
+        "Kubernetes",
+        "Git"
+    ],
+    "currentProject": "RADARE - Reconciliação e Análise de Dados em um Ambiente Responsivo",
+    "contactMe": "Contato",
+    "myGitHub": "Meu GitHub",
+    "myProjects": "Meus Projetos",
+    "myInfluences": "Minhas Influências",
+    "availableForWork": "Disponível para trabalho • Atualmente: {{currentProject}}",
+    "notAvailable": "Não disponível para novos projetos"
+}

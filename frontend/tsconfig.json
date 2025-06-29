@@ -23,6 +23,6 @@
     "src/**/*.ts",
     "src/**/*.tsx",
     "src/**/*.d.ts" // <-- picks up custom.d.ts and vite-env.d.ts
-  ],
+, "src/i18n.js"  ],
   "exclude": ["node_modules", "dist", "**/*.test.ts", "**/*.spec.ts"]
 }

@@ -1,19 +1,19 @@
 // src/pages/Home.tsx
 import React, { FC } from "react";
 import { Box, Divider, CssBaseline } from "@mui/material";
-import { Profile } from "../components/Profile";
+import Profile from "../components/Profile";
 import { Projects } from "../components/Projects";
 import Influences from "../components/Influences";
 
 import Footer from "../components/Footer";
 
-import { profileData } from "../data/profile-data";
+
 import { projectData } from "../data/projects-data";
 
 
 const Home: FC = () => (
   <Box>
-    <Profile profile={profileData} /> 
+    <Profile/> 
     <Divider sx={{ my: 4 }} />
     <Projects projects={projectData} />
     <Divider sx={{ my: 4 }} />
