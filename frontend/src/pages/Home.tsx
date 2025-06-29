@@ -7,8 +7,6 @@ import Influences from "../components/Influences";
 
 import Footer from "../components/Footer";
 
-import { projectData } from "../data/projects-data";
-
 const Home: FC = () => (
   <Box>
     <Profile />

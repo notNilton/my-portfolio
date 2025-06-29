@@ -1,5 +1,6 @@
 // src/components/Influences.tsx
 import React, { FC } from "react";
+import { useTranslation } from "react-i18next";
 import {
   Box,
   Link,
@@ -11,19 +12,26 @@ import {
 } from "@mui/material";
 import { alpha } from "@mui/material/styles";
 import OpenInNewIcon from "@mui/icons-material/OpenInNew";
-import { Influence, influences } from "../data/influences-data";
 
-interface InfluencesProps {
-  items?: Influence[];
+interface InfluenceTrans {
+  title: string;
+  url: string;
 }
 
-const Influences: FC<InfluencesProps> = ({ items = influences }) => {
+const Influences: FC = () => {
+  const { t } = useTranslation("influences");
   const theme = useTheme();
   const isMd = useMediaQuery(theme.breakpoints.up("md"));
 
-  // split into two halves
-  const half = Math.ceil(items.length / 2);
-  const firstHalf = items.slice(0, half);
+  // pull section copy
+  const sectionTitle       = t("sectionTitle");
+  const sectionDescription = t("sectionDescription");
+  // pull the array of items
+  const items = t("items", { returnObjects: true }) as InfluenceTrans[];
+
+  // split into two columns
+  const half       = Math.ceil(items.length / 2);
+  const firstHalf  = items.slice(0, half);
   const secondHalf = items.slice(half);
 
   return (
@@ -37,6 +45,7 @@ const Influences: FC<InfluencesProps> = ({ items = influences }) => {
         px: { xs: 2, md: 4 },
       }}
     >
+      {/* Title */}
       <Typography
         id="influences"
         variant="h1"
@@ -51,17 +60,18 @@ const Influences: FC<InfluencesProps> = ({ items = influences }) => {
           WebkitTextFillColor: "transparent",
         }}
       >
-        Intellectual Influences
+        {sectionTitle}
       </Typography>
 
+      {/* Description */}
       <Typography
         variant="body1"
         sx={{ mb: 4, maxWidth: 800, lineHeight: 1.7, textAlign: "center" }}
       >
-        These works have profoundly shaped my thinking across technology,
-        philosophy, and economics.
+        {sectionDescription}
       </Typography>
 
+      {/* Two-column list */}
       <Box
         sx={{
           display: "flex",
@@ -72,11 +82,7 @@ const Influences: FC<InfluencesProps> = ({ items = influences }) => {
         }}
       >
         {[firstHalf, secondHalf].map((column, colIdx) => (
-          <List
-            key={colIdx}
-            disablePadding
-            sx={{ flex: 1, minWidth: 0 }} // minWidth=0 for proper flex shrinking
-          >
+          <List key={colIdx} disablePadding sx={{ flex: 1, minWidth: 0 }}>
             {column.map((item, idx) => (
               <ListItem key={idx} disablePadding sx={{ mb: 1.5 }}>
                 <Link
@@ -93,7 +99,10 @@ const Influences: FC<InfluencesProps> = ({ items = influences }) => {
                     width: "100%",
                     transition: "all 0.2s ease",
                     "&:hover": {
-                      backgroundColor: alpha(theme.palette.primary.main, 0.08),
+                      backgroundColor: alpha(
+                        theme.palette.primary.main,
+                        0.08
+                      ),
                       transform: "translateX(4px)",
                       boxShadow: 1,
                     },
@@ -127,7 +136,8 @@ const Influences: FC<InfluencesProps> = ({ items = influences }) => {
                         fontFamily: "monospace",
                       }}
                     >
-                      {new URL(item.url).hostname.replace("www.", "")}
+                      {new URL(item.url)
+                        .hostname.replace("www.", "")}
                     </Typography>
                   </Box>
 

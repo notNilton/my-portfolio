@@ -9,16 +9,20 @@ import enProfile from "./locales/enus/profile.json";
 import ptProfile from "./locales/ptbr/profile.json";
 import enProjects from "./locales/enus/projects.json";
 import ptProjects from "./locales/ptbr/projects.json";
+import enInfluences from "./locales/enus/influences.json";
+import ptInfluences from "./locales/ptbr/influences.json";
+
+
 
 i18n
   .use(LanguageDetector)
   .use(initReactI18next)
   .init({
     resources: {
-      en:   { navbar: enNav,   profile: enProfile, projects: enProjects },  // ← here
-      ptBR: { navbar: ptNav,   profile: ptProfile, projects: ptProjects },  // ← and here
+      en:   { navbar: enNav,   profile: enProfile, projects: enProjects, influences: enInfluences }, 
+      ptBR: { navbar: ptNav,   profile: ptProfile, projects: ptProjects, influences: ptInfluences}, 
     },
-    ns: ["navbar", "profile", "projects"],
+    ns: ["navbar", "profile", "projects","influences"],
     defaultNS: "navbar",
     fallbackLng: "en",
     detection: { order: ["localStorage","navigator"], caches: ["localStorage"] },
