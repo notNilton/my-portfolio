@@ -8,11 +8,11 @@ import {
   Button,
   IconButton,
   useTheme,
-  Theme,
   styled,
   alpha,
   ButtonProps,
 } from "@mui/material";
+import { useTranslation } from "react-i18next";
 
 interface NavbarProps {
   theme: "light" | "dark";
@@ -20,15 +20,14 @@ interface NavbarProps {
 }
 
 const Navbar: FC<NavbarProps> = ({ theme, toggleTheme }) => {
+  const { t, i18n } = useTranslation("navbar");
   const location = useLocation();
   const muiTheme = useTheme();
 
   const navLinks = [
-    { path: "/", label: "Home" },
-    { path: "/curriculum", label: "Curriculum" },
-    // { path: "/blog", label: "Blog" },
+    { path: "/", key: "home" },
+    { path: "/curriculum", key: "curriculum" },
   ];
-
 
   interface NavButtonProps extends ButtonProps {
     component?: React.ElementType;
@@ -62,6 +61,7 @@ const Navbar: FC<NavbarProps> = ({ theme, toggleTheme }) => {
       }}
     >
       <Toolbar sx={{ justifyContent: "space-between", px: 3 }}>
+        {/* left: nav links */}
         <Box component="nav" sx={{ display: "flex", gap: 2 }}>
           {navLinks.map((link) => (
             <NavButton
@@ -70,25 +70,34 @@ const Navbar: FC<NavbarProps> = ({ theme, toggleTheme }) => {
               to={link.path}
               className={location.pathname === link.path ? "active" : ""}
             >
-              {link.label}
+              {t(link.key)}
             </NavButton>
           ))}
         </Box>
 
-        <IconButton
-          onClick={toggleTheme}
-          size="medium"
-          sx={{
-            borderRadius: "4px",
-            color: muiTheme.palette.text.secondary,
-            "&:hover": {
-              backgroundColor: alpha(muiTheme.palette.primary.main, 0.05),
-              color: muiTheme.palette.primary.main,
-            },
-          }}
-        >
-          {theme === "light" ? <DarkMode /> : <LightMode />}
-        </IconButton>
+        {/* right: language + theme toggles */}
+        <Box sx={{ display: "flex", alignItems: "center", gap: 1 }}>
+          <Button size="small" onClick={() => i18n.changeLanguage("en")}>
+            EN
+          </Button>
+          <Button size="small" onClick={() => i18n.changeLanguage("ptBR")}>
+            PT
+          </Button>
+          <IconButton
+            onClick={toggleTheme}
+            size="medium"
+            sx={{
+              borderRadius: "4px",
+              color: muiTheme.palette.text.secondary,
+              "&:hover": {
+                backgroundColor: alpha(muiTheme.palette.primary.main, 0.05),
+                color: muiTheme.palette.primary.main,
+              },
+            }}
+          >
+            {theme === "light" ? <DarkMode /> : <LightMode />}
+          </IconButton>
+        </Box>
       </Toolbar>
     </AppBar>
   );

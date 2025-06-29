@@ -1,3 +1,4 @@
+import "./i18n";
 import React, { StrictMode, useState, useEffect, FC } from "react";
 import { createRoot } from "react-dom/client";
 import { ThemeProvider, CssBaseline } from "@mui/material";
