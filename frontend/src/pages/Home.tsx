@@ -2,20 +2,18 @@
 import React, { FC } from "react";
 import { Box, Divider, CssBaseline } from "@mui/material";
 import Profile from "../components/Profile";
-import { Projects } from "../components/Projects";
+import Projects from "../components/Projects";
 import Influences from "../components/Influences";
 
 import Footer from "../components/Footer";
 
-
 import { projectData } from "../data/projects-data";
-
 
 const Home: FC = () => (
   <Box>
-    <Profile/> 
+    <Profile />
     <Divider sx={{ my: 4 }} />
-    <Projects projects={projectData} />
+    <Projects />
     <Divider sx={{ my: 4 }} />
     <Influences />
     <Divider sx={{ my: 4 }} />

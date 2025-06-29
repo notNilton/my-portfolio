@@ -1,21 +1,41 @@
 // src/components/Projects.tsx
 import React, { FC } from "react";
-import {
-  Box,
-  Typography,
-  Button,
-  Chip,
-  Paper,
-} from "@mui/material";
+import { useTranslation } from "react-i18next";
+import { Box, Typography, Chip, Paper } from "@mui/material";
 import { alpha, useTheme } from "@mui/material/styles";
-import { ProjectData } from "../data/projects-data";
 
-interface ProjectsProps {
-  projects: ProjectData[];
+// Import all your images directly
+import radareImg from "../assets/projects/radare_1.png";
+import aiicpImg1 from "../assets/projects/aiicp_1.png";
+import aiicpImg2 from "../assets/projects/aiicp_2.png";
+import aiicpImg3 from "../assets/projects/aiicp_3.png";
+import lensegImg1 from "../assets/projects/lenseg_1.png";
+import lensegImg2 from "../assets/projects/lenseg_2.png";
+
+interface ProjectTrans {
+  id: number;
+  title: string;
+  description: string;
+  tags: string[];
 }
 
-export const Projects: FC<ProjectsProps> = ({ projects }) => {
+const Projects: FC = () => {
+  const { t } = useTranslation("projects");
   const theme = useTheme();
+
+  // Section header
+  const sectionTitle       = t("sectionTitle");
+  const sectionDescription = t("sectionDescription");
+
+  // Pull the array of translated projects from i18n
+  const items = t("items", { returnObjects: true }) as ProjectTrans[];
+
+  // Map project IDs to their imported images
+  const imagesMap: Record<number, string[]> = {
+    1: [radareImg],
+    2: [aiicpImg1, aiicpImg2, aiicpImg3],
+    3: [lensegImg1, lensegImg2],
+  };
 
   return (
     <Box
@@ -25,12 +45,9 @@ export const Projects: FC<ProjectsProps> = ({ projects }) => {
         display: "flex",
         flexDirection: "column",
         alignItems: "center",
-
-        /* constrain width and center horizontally */
         width: "100%",
         maxWidth: 1000,
         mx: "auto",
-
         px: { xs: 2, md: 4 },
       }}
     >
@@ -49,18 +66,23 @@ export const Projects: FC<ProjectsProps> = ({ projects }) => {
           WebkitTextFillColor: "transparent",
         }}
       >
-        Main Projects
+        {sectionTitle}
       </Typography>
 
+      {/* Section Description */}
       <Typography
         variant="body1"
-        sx={{ mb: 4, maxWidth: 800, lineHeight: 1.6, textAlign: "center" }}
+        sx={{
+          mb: 4,
+          maxWidth: 800,
+          lineHeight: 1.6,
+          textAlign: "center",
+        }}
       >
-        These are my main projects that showcase my skills and interests in
-        software development, design, and problem-solving.
+        {sectionDescription}
       </Typography>
 
-      {/* Responsive grid */}
+      {/* Projects Grid */}
       <Box
         sx={{
           display: "grid",
@@ -69,9 +91,9 @@ export const Projects: FC<ProjectsProps> = ({ projects }) => {
           gap: 5,
         }}
       >
-        {projects.map((proj) => {
-          const href = proj.liveUrl ?? proj.githubUrl ?? "#";
-          const firstImage = proj.images[0];
+        {items.map((proj) => {
+          const imgs     = imagesMap[proj.id] || [];
+          const firstImg = imgs[0];
 
           return (
             <Paper
@@ -84,17 +106,17 @@ export const Projects: FC<ProjectsProps> = ({ projects }) => {
                 flexDirection: "column",
               }}
             >
-              {/* First image only, 1:1 */}
+              {/* Image */}
               <Box
                 sx={{
                   width: "100%",
                   position: "relative",
-                  pt: "100%", // 1:1 ratio
+                  pt: "100%", // 1:1 aspect ratio
                 }}
               >
                 <Box
                   component="img"
-                  src={firstImage}
+                  src={firstImg}
                   alt={`${proj.title} screenshot`}
                   sx={{
                     position: "absolute",
@@ -133,7 +155,7 @@ export const Projects: FC<ProjectsProps> = ({ projects }) => {
                   {proj.description}
                 </Typography>
 
-                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5, mb: 2 }}>
+                <Box sx={{ display: "flex", flexWrap: "wrap", gap: 0.5 }}>
                   {proj.tags.map((tag) => (
                     <Chip
                       key={tag}
@@ -149,17 +171,6 @@ export const Projects: FC<ProjectsProps> = ({ projects }) => {
                     />
                   ))}
                 </Box>
-
-                {/* <Button
-                  variant="contained"
-                  size="small"
-                  href={href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  sx={{ mt: "auto", alignSelf: "center" }}
-                >
-                  Know More
-                </Button> */}
               </Box>
             </Paper>
           );

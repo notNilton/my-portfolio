@@ -1,0 +1,24 @@
+{
+  "sectionTitle": "Projetos Principais",
+  "sectionDescription": "Estes são meus principais projetos que demonstram minhas habilidades e interesses em desenvolvimento de software, design e resolução de problemas.",
+  "items": [
+    {
+      "id": 1,
+      "title": "RADARE – Reconciliação e Análise de Dados em um Ambiente Responsivo",
+      "description": "Sistema de reconciliação de dados industriais garantindo integridade e arquitetura escalável.",
+      "tags": ["Python", "TypeScript", "FastAPI", "PostgreSQL", "Redis", "Docker", "Kubernetes"]
+    },
+    {
+      "id": 2,
+      "title": "AIICP – Pipeline de Correção de Imagens por Inteligência Artificial",
+      "description": "Pipeline com IA para correção e aprimoramento de pixel art gerada por IA.",
+      "tags": ["Python", "TensorFlow", "OpenCV", "PyTorch", "FastAPI"]
+    },
+    {
+      "id": 3,
+      "title": "LENSEG – Segmentação de Lentes e Recomendação de Armações",
+      "description": "Plataforma com IA para recomendações personalizadas de óculos usando reconhecimento facial.",
+      "tags": ["Python", "OpenCV", "TensorFlow", "Dlib", "Flask"]
+    }
+  ]
+}
