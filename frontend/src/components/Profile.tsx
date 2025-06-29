@@ -44,7 +44,7 @@ export const Profile: FC<{ profile: any }> = ({ profile }) => {
         {/* Left: Avatar & Name */}
         <Box flexShrink={0}>
           <Avatar
-            src="/avatar.jpg"
+            src={profile.avatar}
             sx={{
               width: 140,
               height: 140,

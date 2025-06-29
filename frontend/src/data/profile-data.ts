@@ -1,3 +1,5 @@
+import avatarImg from "../assets/profile/avatar.png";
+
 export interface StatusData {
     available: boolean;
     currentProject: string;
@@ -10,6 +12,7 @@ export interface ProfileData {
     status: StatusData;
     skills: string[];
     about: string[];
+    avatar: string;      
 }
 
 export const profileData: ProfileData = {
@@ -43,4 +46,5 @@ export const profileData: ProfileData = {
         "Kubernetes",
         "Git",
     ],
+    avatar: avatarImg
 };
